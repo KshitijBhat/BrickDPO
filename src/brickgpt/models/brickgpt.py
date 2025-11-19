@@ -140,6 +140,9 @@ class BrickGPT:
         # Generate brick structure. If it is unstable, remove all bricks after the first unstable brick and regenerate.
         for regeneration_num in range(self.max_regenerations + 1):
             bricks, this_rejection_reasons = self._generate_structure(caption, starting_bricks=starting_bricks)
+
+            # here we should save the rejected bricks and the reason to a specific file.
+            # Can we get stability scores here as well?
             rejection_reasons.update(this_rejection_reasons)
             if self.max_regenerations == 0 or self._is_stable(bricks):
                 break
