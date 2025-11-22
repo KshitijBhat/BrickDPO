@@ -68,6 +68,9 @@ def analyze_stats(output_dir):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--output_dir', type=str, default='proj_develop/batch_outputs', help='Location of batch infer output CSVs')
+    parser.add_argument('--output_dir_prefix', type=str, default='proj_develop/batch_outputs', help='Base directory for all outputs')
+    parser.add_argument('--experiment_name', type=str, default='', help='Output folder will have this as suffix')
     args = parser.parse_args()
-    analyze_stats(args.output_dir)
+
+    output_dir = os.path.join(args.output_dir_prefix, args.experiment_name)
+    analyze_stats(output_dir)
