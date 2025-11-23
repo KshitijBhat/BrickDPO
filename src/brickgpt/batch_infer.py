@@ -56,12 +56,8 @@ def main():
         object_id = row.get('object_id', idx)
         category_id = row.get('category_id', idx)
         prompts = row[args.caption_column]
-        if not isinstance(prompts, list):
-            prompts = [prompts]
         for prompt in prompts:
-            # Run inference
             output = brickgpt(prompt)
-
 
             # Collected DPO dataset
             dpo_data_point = output.get('dpo_response_dict', None)

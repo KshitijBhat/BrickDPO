@@ -207,17 +207,20 @@ class BrickGPT:
         else:
             prompt = self.llm.tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors='pt')
 
+        # print(f"LLM input: {messages} \n")
+
         # Generate bricks with rejection sampling
         rejection_reasons = Counter()
         for brick_num in range(self.max_bricks):
             brick, rejection_reasons_brick = self.generate_brick_with_rejection_sampling(
                 prompt if brick_num == 0 else None, bricks=starting_bricks
             )
+            
             if not brick:  # EOS token was generated
                 break
             rejection_reasons.update(rejection_reasons_brick)
             starting_bricks.add_brick(Brick.from_txt(brick))
-
+        # print(f"LLM output: {starting_bricks.to_txt()} \n")
         return starting_bricks, rejection_reasons
 
     def generate_brick_with_rejection_sampling(
