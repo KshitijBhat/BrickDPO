@@ -137,6 +137,12 @@ class BrickGPT:
         rejection_reasons = Counter()
         regeneration_num = None
 
+        generated_bricks = []
+        stable_partial_structures = []
+        average_stability_scores = []
+
+        print(caption)
+
         # Generate brick structure. If it is unstable, remove all bricks after the first unstable brick and regenerate.
         for regeneration_num in range(self.max_regenerations + 1):
             bricks, this_rejection_reasons = self._generate_structure(caption, starting_bricks=starting_bricks)
@@ -149,12 +155,33 @@ class BrickGPT:
             if regeneration_num == self.max_regenerations:
                 warnings.warn(f'Failed to generate a stable structure after {regeneration_num + 1} attempts.\n')
                 break
-            starting_bricks = self._remove_all_bricks_after_first_unstable_brick(bricks)
+
+            # starting_bricks will be the most stable brick for this particular generation, initial_stabiliy = bricks.stability_scores().mean()
+            starting_bricks, initial_stability = self._remove_all_bricks_after_first_unstable_brick(bricks)
+
+            generated_bricks.append(bricks.to_txt())
+            stable_partial_structures.append(starting_bricks.to_txt())
+            average_stability_scores.append(initial_stability)
+
+
+        # Get the final accepted stable structure
+        generated_bricks.append(bricks.to_txt())
+        stable_partial_structures.append(bricks.to_txt())
+        average_stability_scores.append(self._stability_scores(bricks).mean())
+
+        # record DPO data point
+        dpo_responses_dict = {
+            'caption': caption,
+            'generated_bricks': generated_bricks,
+            'stable_partial_structure': stable_partial_structures,
+            'average_stability_scores': average_stability_scores,
+        }
 
         return {
             'bricks': bricks,
             'rejection_reasons': rejection_reasons,
             'n_regenerations': regeneration_num,
+            'dpo_response_dict': dpo_responses_dict,
         }
 
     def _generate_structure(
@@ -178,6 +205,8 @@ class BrickGPT:
         ]
         if starting_bricks_txt:  # Continue generation from a partial structure
             messages.append({'role': 'assistant', 'content': starting_bricks_txt})
+            print('Continuing generation from partial structure:')
+            print(messages)
             prompt = self.llm.tokenizer.apply_chat_template(messages, continue_final_message=True, return_tensors='pt')
         else:
             prompt = self.llm.tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors='pt')
@@ -367,13 +396,17 @@ class BrickGPT:
         """
         Removes all bricks starting from the first unstable brick. Repeats this process until the strucure is stable.
         """
+        initial_stability = None
         while True:
             if self._is_stable(bricks):
-                return bricks
+                return bricks, initial_stability
             scores = self._stability_scores(bricks)
+            if initial_stability is None:
+                initial_stability = np.mean(scores)
             first_unstable_brick_idx = next((i for i, brick in enumerate(bricks.bricks)
                                              if np.any(scores[brick.slice] >= 1)), -1)
             bricks = BrickStructure(bricks.bricks[:first_unstable_brick_idx])
+            
 
 
 def create_instruction(caption: str) -> str:

@@ -13,3 +13,5 @@ wheels/
 wandb
 *.un~
 .DS_Store
+
+proj_develop/batch_outputs/
