@@ -141,8 +141,6 @@ class BrickGPT:
         stable_partial_structures = []
         average_stability_scores = []
 
-        print(caption)
-
         # Generate brick structure. If it is unstable, remove all bricks after the first unstable brick and regenerate.
         for regeneration_num in range(self.max_regenerations + 1):
             bricks, this_rejection_reasons = self._generate_structure(caption, starting_bricks=starting_bricks)
@@ -205,8 +203,6 @@ class BrickGPT:
         ]
         if starting_bricks_txt:  # Continue generation from a partial structure
             messages.append({'role': 'assistant', 'content': starting_bricks_txt})
-            print('Continuing generation from partial structure:')
-            print(messages)
             prompt = self.llm.tokenizer.apply_chat_template(messages, continue_final_message=True, return_tensors='pt')
         else:
             prompt = self.llm.tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors='pt')
