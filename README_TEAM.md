@@ -6,6 +6,10 @@ You can run batch inference over a dataset of structures using:
 uv run batch_infer
 ```
 
+```zsh
+/home/kneepolean/.local/bin/uv run infer
+```
+
 This script processes each structure in the dataset and records BrickGPT's rejection and regeneration statistics.
 
 The **four most important arguments** for batch inference are:
