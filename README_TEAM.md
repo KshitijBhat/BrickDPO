@@ -19,7 +19,15 @@ See `uv run batch_infer -h` for the full list of options.
 
 ### Dataset structure
 
-Each structure in the dataset includes **five prompts** (stored in the `captions` column). BrickGPT generates one output per prompt and logs statistics for each prompt-structure pair.
+Each structure in the dataset includes **five prompts** (stored in the `captions` column). BrickGPT generates one output per prompt and logs statistics for each promp
+brick_rejections_stats.csv — total rejection count per prompt
+brick_rejection_reasons.csv — rejection counts broken down by reason
+regeneration_stats.csv — number of regenerations per prompt
+Visualizing results
+To visualize the saved statistics, run:
+
+python proj_develop/eval_stats.py
+t-structure pair.
 
 ### Output files
 
@@ -44,3 +52,20 @@ python proj_develop/eval_stats.py
 ```
 
 This script loads the CSVs from the experiment folder and produces summary plots (histograms, reason distributions, regeneration counts).
+
+
+## Sreeharsha important commands:
+```zsh
+python proj_develop/eval_stats.py --output_dir_prefix proj_develop/datasets/dpo_datasets/combined_dataset
+```
+
+* For AWS:
+```bash
+
+to active the virtual environment:
+
+```zsh
+source .venv-eval/bin/activate
+```
+
+```
