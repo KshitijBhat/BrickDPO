@@ -72,4 +72,12 @@ to active the virtual environment:
 source .venv-eval/bin/activate
 ```
 
+## Kshitij: How to run the dpo data collection?
+It is the same as the batch infer script.
+
+The args are experiment name prefix, start_idx and the number of rows you want to run it for.
+
+Example:
+```
+uv run batch_infer --dataset /home/vader/Music/ckpts/10623-ConditionedBrickGPT/proj_develop/datasets/4class_stablebrick2text_train.parquet --experiment_name train_400_599 --start_idx 400 --max_rows 200
 ```
