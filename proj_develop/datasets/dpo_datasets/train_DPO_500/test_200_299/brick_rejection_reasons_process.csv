@@ -1,0 +1,501 @@
+structure_id,prompt,collision,already_rejected
+70caab9e-1975-470e-8da9-2e235bb41f56,Compact toy car featuring block-like arrangement of components.,15,42
+70caab9e-1975-470e-8da9-2e235bb41f56,Small vehicle with layered rectangular sections and protruding rear edges.,374,555,1
+70caab9e-1975-470e-8da9-2e235bb41f56,"Toy automobile with blocky exterior, indented top sections, and defined front bumper.",160,373
+70caab9e-1975-470e-8da9-2e235bb41f56,"Brick-like car with a step-formed roof, extended rear panels, and an angular front.",78,168
+70caab9e-1975-470e-8da9-2e235bb41f56,"Constructed car with staggered block tiers forming a structured roof, recessed hood lines, elevated rear panels, and a squared-off front bumper.",24,91,1
+fec62205-1968-4401-9079-b9eb38567dfb,Compact car with a blocky appearance.,2,4
+fec62205-1968-4401-9079-b9eb38567dfb,Car featuring a boxy shape with a rectangular outline.,16,78
+fec62205-1968-4401-9079-b9eb38567dfb,A rectangular car form with a stepped roof and protruding front.,4
+fec62205-1968-4401-9079-b9eb38567dfb,"Boxy car featuring layered block sequences, a flat roof, subtly raised front, and a straight rear.",14,14
+fec62205-1968-4401-9079-b9eb38567dfb,"Car with a blocky, stepped roof, rectangular body. Front raised in a layered fashion. Rear flat, with uniform levels. Rectangular sides slightly indented beneath, creating a subtle overhang. Roofline marked by a precise series of raised blocks, creating texture and dimension throughout.",20,194
+850793a7-adb5-4bae-9d66-5b49935c70fb,Compact car with a blocky appearance.,4,8
+850793a7-adb5-4bae-9d66-5b49935c70fb,Car featuring a boxy shape with a rectangular outline.,5,5
+850793a7-adb5-4bae-9d66-5b49935c70fb,A rectangular car form with a stepped roof and protruding front.,35,64
+850793a7-adb5-4bae-9d66-5b49935c70fb,"Boxy car featuring layered block sequences, a flat roof, subtly raised front, and a straight rear.",34,221,1
+850793a7-adb5-4bae-9d66-5b49935c70fb,"Car with a blocky, stepped roof, rectangular body. Front raised in a layered fashion. Rear flat, with uniform levels. Rectangular sides slightly indented beneath, creating a subtle overhang. Roofline marked by a precise series of raised blocks, creating texture and dimension throughout.",27,67
+a26514ee-470a-4374-8774-ccc21b1b2e36,"Compact car with a blocky, rectangular shape.",28,182
+a26514ee-470a-4374-8774-ccc21b1b2e36,"A small vehicle featuring a layered, stepped appearance.",14,99
+a26514ee-470a-4374-8774-ccc21b1b2e36,Boxy automobile with a tiered body and squared edges.,22,104
+a26514ee-470a-4374-8774-ccc21b1b2e36,"Squat car form with tiered sections, distinct bumpers, and a broad roof.",18,113
+a26514ee-470a-4374-8774-ccc21b1b2e36,"Compact, blocklike car with a tiered body, rectangular roof, protruding front, and chunky rear end. Squared-off wheel arches and layered elements define the sides, while the top maintains a flat, expansive surface.",11,20
+8cd8a61c-944a-4a86-8948-778117f998e1,"Compact car with a blocky, rectangular shape.",7,1
+8cd8a61c-944a-4a86-8948-778117f998e1,"A small vehicle featuring a layered, stepped appearance.",5,2
+8cd8a61c-944a-4a86-8948-778117f998e1,Boxy automobile with a tiered body and squared edges.,14,30
+8cd8a61c-944a-4a86-8948-778117f998e1,"Squat car form with tiered sections, distinct bumpers, and a broad roof.",43,188
+8cd8a61c-944a-4a86-8948-778117f998e1,"Compact, blocklike car with a tiered body, rectangular roof, protruding front, and chunky rear end. Squared-off wheel arches and layered elements define the sides, while the top maintains a flat, expansive surface.",17,91
+bb1ae8a5-d0d2-43b8-a9d5-0dc08e9b584c,"A block-like car with a tiered, angular rooftop.",8,5
+bb1ae8a5-d0d2-43b8-a9d5-0dc08e9b584c,The car features a boxy silhouette with a stepped roof and squared front.,19,100
+bb1ae8a5-d0d2-43b8-a9d5-0dc08e9b584c,"Boxy car with a flat front, stacked rooftop, and pronounced corners.",13,80
+bb1ae8a5-d0d2-43b8-a9d5-0dc08e9b584c,"Geometrically structured car with layered rooftop, squared front, angular shape, and a shortened rear section.",28,107
+bb1ae8a5-d0d2-43b8-a9d5-0dc08e9b584c,"A car with a rectangular base and angular corners. The stepped rooftop gradually narrows towards the rear. The front is flat while the sides smoothly transition to the rear, ending in a squared-off back.",21,64
+26a673e5-6b63-4c12-b90d-ec2b1d09a9ee,"A block-like car with a tiered, angular rooftop.",23,119
+26a673e5-6b63-4c12-b90d-ec2b1d09a9ee,The car features a boxy silhouette with a stepped roof and squared front.,30,256,5
+26a673e5-6b63-4c12-b90d-ec2b1d09a9ee,"Boxy car with a flat front, stacked rooftop, and pronounced corners.",32,149,1
+26a673e5-6b63-4c12-b90d-ec2b1d09a9ee,"Geometrically structured car with layered rooftop, squared front, angular shape, and a shortened rear section.",68,131
+26a673e5-6b63-4c12-b90d-ec2b1d09a9ee,"A car with a rectangular base and angular corners. The stepped rooftop gradually narrows towards the rear. The front is flat while the sides smoothly transition to the rear, ending in a squared-off back.",24,126
+16aa99f8-9aa8-4b4f-babb-abbd682490bd,"Compact car form with a structured, blocky design.",40,331
+16aa99f8-9aa8-4b4f-babb-abbd682490bd,"The car features a blocky, geometric layout with angled edges.",68,288
+16aa99f8-9aa8-4b4f-babb-abbd682490bd,The car’s body displays a cuboid form with a flat top and recessed bottom edges.,72,283
+16aa99f8-9aa8-4b4f-babb-abbd682490bd,"This car consists of layered rectangular segments, creating a stepped top and undercarriage grooves.",43,220
+16aa99f8-9aa8-4b4f-babb-abbd682490bd,"A block-based car structure with a flat, segmented roof, sharply angled rear, and recessed bottom. The front and rear are slightly elevated, presenting a distinct, angular silhouette.",7,67
+57086d6f-a5b7-475e-8f1d-16e6f1bf0d11,"Compact car form with a structured, blocky design.",118,787,1
+57086d6f-a5b7-475e-8f1d-16e6f1bf0d11,"The car features a blocky, geometric layout with angled edges.",11,126
+57086d6f-a5b7-475e-8f1d-16e6f1bf0d11,The car’s body displays a cuboid form with a flat top and recessed bottom edges.,3,26
+57086d6f-a5b7-475e-8f1d-16e6f1bf0d11,"This car consists of layered rectangular segments, creating a stepped top and undercarriage grooves.",61,255,1
+57086d6f-a5b7-475e-8f1d-16e6f1bf0d11,"A block-based car structure with a flat, segmented roof, sharply angled rear, and recessed bottom. The front and rear are slightly elevated, presenting a distinct, angular silhouette.",45,190
+88d71dae-414b-49f2-b675-e568e2df4a96,Compact toy vehicle with blocky construction and angular features.,20,54
+88d71dae-414b-49f2-b675-e568e2df4a96,Small vehicle incorporating sharp edges and layered block segments throughout.,48,182
+88d71dae-414b-49f2-b675-e568e2df4a96,"Rectangular car with prominent edges, tiered front, and elevated rear.",45,435,1
+88d71dae-414b-49f2-b675-e568e2df4a96,"Vehicle showcasing a flat, rectangular main body with a protruding, layered front section and a raised rear portion.",15,98
+88d71dae-414b-49f2-b675-e568e2df4a96,"A compact vehicle with a flat, rectangular chassis and sharply defined edges. The front section is tiered, projecting slightly forward, while the rear is elevated above the main body, creating a sloped look.",25,125
+9bc90a2e-9a88-4df0-a9fb-4367ae1ca17d,Compact toy vehicle with blocky construction and angular features.,29,266,1
+9bc90a2e-9a88-4df0-a9fb-4367ae1ca17d,Small vehicle incorporating sharp edges and layered block segments throughout.,41,125
+9bc90a2e-9a88-4df0-a9fb-4367ae1ca17d,"Rectangular car with prominent edges, tiered front, and elevated rear.",74,512
+9bc90a2e-9a88-4df0-a9fb-4367ae1ca17d,"Vehicle showcasing a flat, rectangular main body with a protruding, layered front section and a raised rear portion.",49,337
+9bc90a2e-9a88-4df0-a9fb-4367ae1ca17d,"A compact vehicle with a flat, rectangular chassis and sharply defined edges. The front section is tiered, projecting slightly forward, while the rear is elevated above the main body, creating a sloped look.",4,12
+fb5fb178-46d3-4df3-a447-522594f97a15,Compact car with a rectangular chassis and blocky contours.,20,135
+fb5fb178-46d3-4df3-a447-522594f97a15,"A small vehicle emphasizing a uniform, blocky geometric form.",30,53,1
+fb5fb178-46d3-4df3-a447-522594f97a15,"A car with rectangular bodywork and block-like, angular features.",9,141
+fb5fb178-46d3-4df3-a447-522594f97a15,"Angular car structure, featuring a boxy chassis with layered brickwork.",5,6
+fb5fb178-46d3-4df3-a447-522594f97a15,"A compact automotive build with a rectangular base and tiered layers forming its roof. Block-like elements define the angular front and rear, while the sides are smooth and uniformly stacked, creating a cohesive rectangular shape.",25,218
+b575bccd-ca58-4ffe-a1c0-8b7641d3ee08,Compact car with a rectangular chassis and blocky contours.,71,347
+b575bccd-ca58-4ffe-a1c0-8b7641d3ee08,"A small vehicle emphasizing a uniform, blocky geometric form.",175,375
+b575bccd-ca58-4ffe-a1c0-8b7641d3ee08,"A car with rectangular bodywork and block-like, angular features."
+b575bccd-ca58-4ffe-a1c0-8b7641d3ee08,"Angular car structure, featuring a boxy chassis with layered brickwork.",15,49
+b575bccd-ca58-4ffe-a1c0-8b7641d3ee08,"A compact automotive build with a rectangular base and tiered layers forming its roof. Block-like elements define the angular front and rear, while the sides are smooth and uniformly stacked, creating a cohesive rectangular shape.",2,2
+3a36631a-15d5-45bb-bbbd-bbf84dae73aa,Compact vehicle with angular design and segmented features.,38,139
+3a36631a-15d5-45bb-bbbd-bbf84dae73aa,Four-wheeled vehicle featuring a boxy cabin and pronounced fenders.,13,87
+3a36631a-15d5-45bb-bbbd-bbf84dae73aa,"Box-shaped car with elevated rear, squarish cabin, and prominent wheel arches.",19,35
+3a36631a-15d5-45bb-bbbd-bbf84dae73aa,"Angular automobile with blocky cabin, tiered rear, rectangular side outlines, and defined wheel contours.",43,318
+3a36631a-15d5-45bb-bbbd-bbf84dae73aa,"Car with squared cabin, layered rear section, rectangular sides, and distinctive wheel arches. The back area elevates gradually, adding tiered depth behind the main cabin.",45,239
+722d4c87-f9bb-4a55-bab9-76efd216cfa5,Compact vehicle with angular design and segmented features.,15,165,1
+722d4c87-f9bb-4a55-bab9-76efd216cfa5,Four-wheeled vehicle featuring a boxy cabin and pronounced fenders.,11,93
+722d4c87-f9bb-4a55-bab9-76efd216cfa5,"Box-shaped car with elevated rear, squarish cabin, and prominent wheel arches.",113,324
+722d4c87-f9bb-4a55-bab9-76efd216cfa5,"Angular automobile with blocky cabin, tiered rear, rectangular side outlines, and defined wheel contours.",43,177
+722d4c87-f9bb-4a55-bab9-76efd216cfa5,"Car with squared cabin, layered rear section, rectangular sides, and distinctive wheel arches. The back area elevates gradually, adding tiered depth behind the main cabin.",31,85
+bf9df7a4-3a8a-4d35-a9dc-4af9bd78cefe,"Compact car with a boxy, geometric exterior.",10,76
+bf9df7a4-3a8a-4d35-a9dc-4af9bd78cefe,Rectangular car shape with layered block contours and defined edges.,33,126
+bf9df7a4-3a8a-4d35-a9dc-4af9bd78cefe,"Car featuring a cuboid form, tiered top, and protruding front."
+bf9df7a4-3a8a-4d35-a9dc-4af9bd78cefe,"Box-like car structure with a flat top, angular sides, and recessed middle sections.",6,62
+bf9df7a4-3a8a-4d35-a9dc-4af9bd78cefe,"A car with a rectangular, blocky form featuring a flat upper section and tiered contours along its length. The sides are angular, with a stepped front and rear. Protrusions on the roof create a textured appearance, while the overall design maintains a compact and defined structure.",34,44
+23d117c6-9cdb-4568-a9b2-64a41d8ea242,"Compact car with a boxy, geometric exterior.",41,211
+23d117c6-9cdb-4568-a9b2-64a41d8ea242,Rectangular car shape with layered block contours and defined edges.,41,203
+23d117c6-9cdb-4568-a9b2-64a41d8ea242,"Car featuring a cuboid form, tiered top, and protruding front.",29,70
+23d117c6-9cdb-4568-a9b2-64a41d8ea242,"Box-like car structure with a flat top, angular sides, and recessed middle sections.",84,261
+23d117c6-9cdb-4568-a9b2-64a41d8ea242,"A car with a rectangular, blocky form featuring a flat upper section and tiered contours along its length. The sides are angular, with a stepped front and rear. Protrusions on the roof create a textured appearance, while the overall design maintains a compact and defined structure.",37,105
+4d1500c3-d965-42ca-9d9c-ec4766b3e376,Compact car with a blocky geometric form.,14,128
+4d1500c3-d965-42ca-9d9c-ec4766b3e376,"Car with a boxy shape, featuring angular edges and a tiered top.",30,174
+4d1500c3-d965-42ca-9d9c-ec4766b3e376,"A car with a rectangular body, sloped front, defined roof, and rear.",20,33
+4d1500c3-d965-42ca-9d9c-ec4766b3e376,"Angular car body, with tiered roof, rounded front, and squared rear sections.",76,354
+4d1500c3-d965-42ca-9d9c-ec4766b3e376,"Car featuring a boxy, angular form with a tiered roofline and distinct front grille. Rounded front corners and a flat rear end complement the geometric structure.",38,195,1
+64aa69cd-79e7-4d2e-98b8-504925359c3e,Compact car with a blocky geometric form.,33,169
+64aa69cd-79e7-4d2e-98b8-504925359c3e,"Car with a boxy shape, featuring angular edges and a tiered top.",28,299
+64aa69cd-79e7-4d2e-98b8-504925359c3e,"A car with a rectangular body, sloped front, defined roof, and rear.",32,115,1
+64aa69cd-79e7-4d2e-98b8-504925359c3e,"Angular car body, with tiered roof, rounded front, and squared rear sections.",28,178
+64aa69cd-79e7-4d2e-98b8-504925359c3e,"Car featuring a boxy, angular form with a tiered roofline and distinct front grille. Rounded front corners and a flat rear end complement the geometric structure.",16,27
+a19e5b3b-b3b2-4215-9400-a08ed3912034,Car with rectangular body and flat roof.,14,63
+a19e5b3b-b3b2-4215-9400-a08ed3912034,"Compact vehicle featuring a small, angular body and a low-profile top.",66,285,1
+a19e5b3b-b3b2-4215-9400-a08ed3912034,Blocky car form with an elongated main section and slightly raised back end.,11,95
+a19e5b3b-b3b2-4215-9400-a08ed3912034,"Angled rectangular car body with a flat upper section, stepped back, and defined front bumper area.",78,244,1
+a19e5b3b-b3b2-4215-9400-a08ed3912034,"Rectangular car body with block-like detailing, featuring a low-profile roof. The body is elongated with a slightly elevated rear section, and the front includes a protruding angular section, creating a distinct bumper outline.",62,315
+5df5beec-b623-4bff-a460-9fa7e879c91b,Car with rectangular body and flat roof.,17,33
+5df5beec-b623-4bff-a460-9fa7e879c91b,"Compact vehicle featuring a small, angular body and a low-profile top.",2
+5df5beec-b623-4bff-a460-9fa7e879c91b,Blocky car form with an elongated main section and slightly raised back end.,10,39
+5df5beec-b623-4bff-a460-9fa7e879c91b,"Angled rectangular car body with a flat upper section, stepped back, and defined front bumper area.",5,3
+5df5beec-b623-4bff-a460-9fa7e879c91b,"Rectangular car body with block-like detailing, featuring a low-profile roof. The body is elongated with a slightly elevated rear section, and the front includes a protruding angular section, creating a distinct bumper outline.",28,120
+3718b1e8-96b2-4757-84ce-2cdeabaa70b6,"Car with a streamlined, angular profile.",12,13
+3718b1e8-96b2-4757-84ce-2cdeabaa70b6,"Compact car featuring a layered, geometric form.",2,3
+3718b1e8-96b2-4757-84ce-2cdeabaa70b6,"Car with a boxy front and sloped rear, resting on four rectangular sections.",23,101
+3718b1e8-96b2-4757-84ce-2cdeabaa70b6,"A compact car with a tiered roof, rectangular sides, and a slanted rear end.",98,493,1
+3718b1e8-96b2-4757-84ce-2cdeabaa70b6,"Car shaped with a flat top section, angular front, and tiered back; sides feature stepped contours and the base is supported by four evenly spaced rectangular formations.",106,350,2
+0ab3a1c8-8353-4bc7-a6a7-53c4765cca16,"Car with a streamlined, angular profile.",85,320,1
+0ab3a1c8-8353-4bc7-a6a7-53c4765cca16,"Compact car featuring a layered, geometric form.",37,116
+0ab3a1c8-8353-4bc7-a6a7-53c4765cca16,"Car with a boxy front and sloped rear, resting on four rectangular sections.",213,569
+0ab3a1c8-8353-4bc7-a6a7-53c4765cca16,"A compact car with a tiered roof, rectangular sides, and a slanted rear end.",23,135
+0ab3a1c8-8353-4bc7-a6a7-53c4765cca16,"Car shaped with a flat top section, angular front, and tiered back; sides feature stepped contours and the base is supported by four evenly spaced rectangular formations.",13,39
+1e373f4a-1588-46ad-ad8e-39b0ec412d71,Compact car shape with blocky protrusions and rectangular features.,34,105
+1e373f4a-1588-46ad-ad8e-39b0ec412d71,"The car has a low, rectangular base with angular, protruding elements.",19,141
+1e373f4a-1588-46ad-ad8e-39b0ec412d71,A car form featuring a layered top section and a boxy rear.,7,77
+1e373f4a-1588-46ad-ad8e-39b0ec412d71,"The car's main body is low and rectangular, with horizontal top features and abrupt vertical extensions towards the back.",19,27
+1e373f4a-1588-46ad-ad8e-39b0ec412d71,"This vehicle showcases a rectilinear profile with a multi-tiered upper arrangement. The front has a sloped feature, while the back is defined by a blocky, elevated section. Small, stepped elements appear on the sides, contributing to its angular and compact aesthetic.",2,11
+4c56725d-49b9-4124-bdeb-a9c90ccd1cc4,Compact car shape with blocky protrusions and rectangular features.,29,112
+4c56725d-49b9-4124-bdeb-a9c90ccd1cc4,"The car has a low, rectangular base with angular, protruding elements.",29,271
+4c56725d-49b9-4124-bdeb-a9c90ccd1cc4,A car form featuring a layered top section and a boxy rear.,84,169
+4c56725d-49b9-4124-bdeb-a9c90ccd1cc4,"The car's main body is low and rectangular, with horizontal top features and abrupt vertical extensions towards the back.",1,10
+4c56725d-49b9-4124-bdeb-a9c90ccd1cc4,"This vehicle showcases a rectilinear profile with a multi-tiered upper arrangement. The front has a sloped feature, while the back is defined by a blocky, elevated section. Small, stepped elements appear on the sides, contributing to its angular and compact aesthetic.",27,107,1
+5309f70a-118b-433a-a6fa-c8fb75fa07e0,Compact brick-built car with layered geometric features.,4,3
+5309f70a-118b-433a-a6fa-c8fb75fa07e0,"Car with a blocky form and distinct, symmetrical alignment.",25,74
+5309f70a-118b-433a-a6fa-c8fb75fa07e0,Brick-constructed car featuring a block-like front and a flat top.,15,7
+5309f70a-118b-433a-a6fa-c8fb75fa07e0,"Geometric car with a broad, rectangular roof and tiered rear.",11,87
+5309f70a-118b-433a-a6fa-c8fb75fa07e0,"A rectangular car structure with a flat top surface, elevated sides, and a layered front. The undercarriage has an inset section, while the back has a stepped design. The four corners are complemented by angled elements at the front, aligning symmetrically.",30,105
+b2dcec46-06bd-4955-8753-089747d9c645,Compact brick-built car with layered geometric features.,45,208,1
+b2dcec46-06bd-4955-8753-089747d9c645,"Car with a blocky form and distinct, symmetrical alignment.",27,188
+b2dcec46-06bd-4955-8753-089747d9c645,Brick-constructed car featuring a block-like front and a flat top.,3
+b2dcec46-06bd-4955-8753-089747d9c645,"Geometric car with a broad, rectangular roof and tiered rear.",24,110
+b2dcec46-06bd-4955-8753-089747d9c645,"A rectangular car structure with a flat top surface, elevated sides, and a layered front. The undercarriage has an inset section, while the back has a stepped design. The four corners are complemented by angled elements at the front, aligning symmetrically.",4,9
+9874d570-9c51-4cc3-a36d-a6d74e5a6f00,Compact car with rectangular body and angular features.,28,88
+9874d570-9c51-4cc3-a36d-a6d74e5a6f00,Small vehicle featuring a boxy form and tiered roofline.,8,55
+9874d570-9c51-4cc3-a36d-a6d74e5a6f00,"Compact automobile with a squared roof and protruding front section, paired with a layered rear.",14,91
+9874d570-9c51-4cc3-a36d-a6d74e5a6f00,"Car with a flat roof, tiered rear section, angular front, and arch-shaped openings at the base of each side.",65,238
+9874d570-9c51-4cc3-a36d-a6d74e5a6f00,"Car featuring a rectangular roof, stepped rear section, and boxy front. The vehicle has a flat top and arching spaces at the sides for movement, with distinct linear elements defining its geometric structure.",2,11
+3d97eec2-e99f-4a29-88c1-d0237f2f4362,Compact car with rectangular body and angular features.,39,147
+3d97eec2-e99f-4a29-88c1-d0237f2f4362,Small vehicle featuring a boxy form and tiered roofline.,3
+3d97eec2-e99f-4a29-88c1-d0237f2f4362,"Compact automobile with a squared roof and protruding front section, paired with a layered rear.",61,294,1
+3d97eec2-e99f-4a29-88c1-d0237f2f4362,"Car with a flat roof, tiered rear section, angular front, and arch-shaped openings at the base of each side.",60,244
+3d97eec2-e99f-4a29-88c1-d0237f2f4362,"Car featuring a rectangular roof, stepped rear section, and boxy front. The vehicle has a flat top and arching spaces at the sides for movement, with distinct linear elements defining its geometric structure.",22,55
+33ce5081-d8a5-408a-b934-0b91c115503e,Car with rectangular body and tiered rooftop design.,2,2
+33ce5081-d8a5-408a-b934-0b91c115503e,"A compact car featuring a stacked, rectangular form with defined edges.",15,73
+33ce5081-d8a5-408a-b934-0b91c115503e,"Car structure with a stout, rectangular base and a multi-tiered top.",7,1
+33ce5081-d8a5-408a-b934-0b91c115503e,"Compact car with a rectangular base, tiered roof, and protruding sections towards the front and rear, giving defined contours.",51,191
+33ce5081-d8a5-408a-b934-0b91c115503e,"A compact car with a rectangular base, stacked layers forming a tiered rooftop, and protruding block sections at the front and rear, accentuating its angular contours and flat sides.",17,145
+7e5de7e1-6fec-4951-a336-297f29d97936,Car with rectangular body and tiered rooftop design.,92,230
+7e5de7e1-6fec-4951-a336-297f29d97936,"A compact car featuring a stacked, rectangular form with defined edges.",168,378
+7e5de7e1-6fec-4951-a336-297f29d97936,"Car structure with a stout, rectangular base and a multi-tiered top.",28,243
+7e5de7e1-6fec-4951-a336-297f29d97936,"Compact car with a rectangular base, tiered roof, and protruding sections towards the front and rear, giving defined contours.",52,305
+7e5de7e1-6fec-4951-a336-297f29d97936,"A compact car with a rectangular base, stacked layers forming a tiered rooftop, and protruding block sections at the front and rear, accentuating its angular contours and flat sides.",122,514,1
+c847b8b4-6ebb-4ad3-8a4b-9d067e0789c7,"Compact car with a low, blocky profile and layered surfaces.",19,245
+c847b8b4-6ebb-4ad3-8a4b-9d067e0789c7,"Small car featuring a rectangular body, flat top, and stepped edges.",11,18
+c847b8b4-6ebb-4ad3-8a4b-9d067e0789c7,"Boxy car structure with a squared front, recessed rear, and tiered roofline.",22,87
+c847b8b4-6ebb-4ad3-8a4b-9d067e0789c7,"Car with an angular form, featuring a flat roof, rectangular windows, and protruding front bumpers.",22,71
+c847b8b4-6ebb-4ad3-8a4b-9d067e0789c7,"The car has a box-like shape with a flat roof and rectangular windows. The front features layered rows, while the sides extend outward. The rear is recessed, with the top surface appearing slightly tiered. The design includes protruding front bumpers and a distinct, compact silhouette.",35,55
+abbbe35b-87d2-42db-95b8-c2f84ddd2608,"Compact car with a low, blocky profile and layered surfaces.",2,7
+abbbe35b-87d2-42db-95b8-c2f84ddd2608,"Small car featuring a rectangular body, flat top, and stepped edges.",2,12
+abbbe35b-87d2-42db-95b8-c2f84ddd2608,"Boxy car structure with a squared front, recessed rear, and tiered roofline.",59,259
+abbbe35b-87d2-42db-95b8-c2f84ddd2608,"Car with an angular form, featuring a flat roof, rectangular windows, and protruding front bumpers.",27,129
+abbbe35b-87d2-42db-95b8-c2f84ddd2608,"The car has a box-like shape with a flat roof and rectangular windows. The front features layered rows, while the sides extend outward. The rear is recessed, with the top surface appearing slightly tiered. The design includes protruding front bumpers and a distinct, compact silhouette.",15,140
+4a7e9dc3-c6bf-49b9-8cdc-2eb5a58bc1dd,Compact vehicle with defined geometric features and blocky form.,10,39
+4a7e9dc3-c6bf-49b9-8cdc-2eb5a58bc1dd,Compact vehicle showcasing a blocky body with distinct angular edges.,18,121
+4a7e9dc3-c6bf-49b9-8cdc-2eb5a58bc1dd,"A block-shaped vehicle with a cuboid body and rectangular features, showcasing a simplified geometric design.",76,482
+4a7e9dc3-c6bf-49b9-8cdc-2eb5a58bc1dd,"Vehicle with a boxy frame, including a block-like front, rectangular sides, and simplified roof structure, highlighting its angular and cuboid geometry.",110,272
+4a7e9dc3-c6bf-49b9-8cdc-2eb5a58bc1dd,"The vehicle features a rectangular body with a flat roof, distinctly rectangular front and rear ends. The boxy sides have slight indentations suggesting doors, and the roof has a block pattern, consistent with the overall angular design theme.",5,191
+f301d125-ee13-4072-bb38-74b54c22d6f8,Compact vehicle with defined geometric features and blocky form.,6,41
+f301d125-ee13-4072-bb38-74b54c22d6f8,Compact vehicle showcasing a blocky body with distinct angular edges.,37,98
+f301d125-ee13-4072-bb38-74b54c22d6f8,"A block-shaped vehicle with a cuboid body and rectangular features, showcasing a simplified geometric design.",21,146
+f301d125-ee13-4072-bb38-74b54c22d6f8,"Vehicle with a boxy frame, including a block-like front, rectangular sides, and simplified roof structure, highlighting its angular and cuboid geometry.",7,131
+f301d125-ee13-4072-bb38-74b54c22d6f8,"The vehicle features a rectangular body with a flat roof, distinctly rectangular front and rear ends. The boxy sides have slight indentations suggesting doors, and the roof has a block pattern, consistent with the overall angular design theme.",9,14
+5ca652a8-fdbb-4f2f-8a1f-94322d6dd925,A simple car with a rectangular and structured form.,8,8
+5ca652a8-fdbb-4f2f-8a1f-94322d6dd925,Compact car with a rectangular body and rounded outer edges.,2,3
+5ca652a8-fdbb-4f2f-8a1f-94322d6dd925,"Car with a blocky, rectangular shape, featuring a smooth top and detailed front.",49,247,1
+5ca652a8-fdbb-4f2f-8a1f-94322d6dd925,"Rectangular car with a smooth top, rounded sides, layered front components, and a flat rear.",75,219
+5ca652a8-fdbb-4f2f-8a1f-94322d6dd925,"A car with a rectangular body, tiered front design, and rounded edges. The front has layered, stepped details, while the top is flat and slightly elevated in the middle. The sides are smooth, and the rear maintains a flat, straightforward finish.",31,315
+43cd86c8-0c39-41c5-a75b-9df728a4a27f,A simple car with a rectangular and structured form.,6,41
+43cd86c8-0c39-41c5-a75b-9df728a4a27f,Compact car with a rectangular body and rounded outer edges.,19,37
+43cd86c8-0c39-41c5-a75b-9df728a4a27f,"Car with a blocky, rectangular shape, featuring a smooth top and detailed front.",2
+43cd86c8-0c39-41c5-a75b-9df728a4a27f,"Rectangular car with a smooth top, rounded sides, layered front components, and a flat rear.",112,295
+43cd86c8-0c39-41c5-a75b-9df728a4a27f,"A car with a rectangular body, tiered front design, and rounded edges. The front has layered, stepped details, while the top is flat and slightly elevated in the middle. The sides are smooth, and the rear maintains a flat, straightforward finish.",77,289,3
+b10aaf54-9b13-4b27-9082-5aac42d526ba,Car with a boxy structure and distinct elevated sections.,16,19
+b10aaf54-9b13-4b27-9082-5aac42d526ba,Boxy vehicle form with elevated rear and protruding front elements.,2
+b10aaf54-9b13-4b27-9082-5aac42d526ba,"Boxy car shape with layered front, elevated rear, and squared corners.",75,412
+b10aaf54-9b13-4b27-9082-5aac42d526ba,"Compact car form featuring a layered front, squared sides, elevated rear, and protruding top elements.",23,88
+b10aaf54-9b13-4b27-9082-5aac42d526ba,"Boxy car with layered, block-like front structure, squared sides, and an elevated rear section. The front exhibits a tiered effect, while the rear is noticeably raised. Protruding elements on top add to the geometric complexity of the overall shape.",13,64
+1986f789-89c2-475d-834d-0f0855caaaca,Car with a boxy structure and distinct elevated sections.,19,149
+1986f789-89c2-475d-834d-0f0855caaaca,Boxy vehicle form with elevated rear and protruding front elements.,24,326
+1986f789-89c2-475d-834d-0f0855caaaca,"Boxy car shape with layered front, elevated rear, and squared corners.",9,11
+1986f789-89c2-475d-834d-0f0855caaaca,"Compact car form featuring a layered front, squared sides, elevated rear, and protruding top elements.",30,170
+1986f789-89c2-475d-834d-0f0855caaaca,"Boxy car with layered, block-like front structure, squared sides, and an elevated rear section. The front exhibits a tiered effect, while the rear is noticeably raised. Protruding elements on top add to the geometric complexity of the overall shape.",29,299
+78a120d0-70ea-4289-8b67-da4188522fcb,A compact car featuring a rounded top and stepped structure.,24,114
+78a120d0-70ea-4289-8b67-da4188522fcb,"The vehicle has a sloped front, blocky rear, and precision edges.",47,378
+78a120d0-70ea-4289-8b67-da4188522fcb,"A small car with a smooth, slanted hood, elevated rear, and tiered surface.",15,100
+78a120d0-70ea-4289-8b67-da4188522fcb,"The car showcases a low, curved roof and elevated tiered trunk. The front is smoothly angled downward and joined by block-like sides.",19,136
+78a120d0-70ea-4289-8b67-da4188522fcb,"This car exhibits a distinct stacked composition, with a curved roof and a blocky, elevated rear section. The front is gently slanted, merging with vertically-aligned sides, forming a compact rectangular footprint.",9,34
+3b546272-381e-4d3f-9201-fc2a2f808950,A compact car featuring a rounded top and stepped structure.,66,62,1
+3b546272-381e-4d3f-9201-fc2a2f808950,"The vehicle has a sloped front, blocky rear, and precision edges.",7,11
+3b546272-381e-4d3f-9201-fc2a2f808950,"A small car with a smooth, slanted hood, elevated rear, and tiered surface.",93,336
+3b546272-381e-4d3f-9201-fc2a2f808950,"The car showcases a low, curved roof and elevated tiered trunk. The front is smoothly angled downward and joined by block-like sides.",75,263
+3b546272-381e-4d3f-9201-fc2a2f808950,"This car exhibits a distinct stacked composition, with a curved roof and a blocky, elevated rear section. The front is gently slanted, merging with vertically-aligned sides, forming a compact rectangular footprint.",3
+5ac4a2dc-3a74-4cfe-b333-f72cac64e50d,Car with blocky shape and protruding front section.,23,214
+5ac4a2dc-3a74-4cfe-b333-f72cac64e50d,Boxy car form with distinct rectangular and angular elements.,53,205
+5ac4a2dc-3a74-4cfe-b333-f72cac64e50d,"Rectangular car body with angular edges, rising front section.",48,150
+5ac4a2dc-3a74-4cfe-b333-f72cac64e50d,"Blocky car structure, angular rear, rising front, stepped roof.",117,303
+5ac4a2dc-3a74-4cfe-b333-f72cac64e50d,"This car features a boxy, rectangular body with angular edges. The front section is prominently protruding and rises slightly above the main body, while the rear is angular. The roof is stepped, creating a tiered appearance, adding to the structured form of the car.",19,71
+d37f3050-0b56-4bd9-bbd3-56b6de8ad3db,Car with blocky shape and protruding front section.,24,75,1
+d37f3050-0b56-4bd9-bbd3-56b6de8ad3db,Boxy car form with distinct rectangular and angular elements.,28,108
+d37f3050-0b56-4bd9-bbd3-56b6de8ad3db,"Rectangular car body with angular edges, rising front section.",20,101
+d37f3050-0b56-4bd9-bbd3-56b6de8ad3db,"Blocky car structure, angular rear, rising front, stepped roof.",9,4
+d37f3050-0b56-4bd9-bbd3-56b6de8ad3db,"This car features a boxy, rectangular body with angular edges. The front section is prominently protruding and rises slightly above the main body, while the rear is angular. The roof is stepped, creating a tiered appearance, adding to the structured form of the car.",19,66
+0ed6dc21-e993-4c0b-885b-3dbfa7c1154c,"Compact car with blocky, angular contours.",30,152
+0ed6dc21-e993-4c0b-885b-3dbfa7c1154c,Small vehicle with a boxy shape and layered segments.,194,1106,3,1
+0ed6dc21-e993-4c0b-885b-3dbfa7c1154c,Boxy car featuring a sloped front and stepped rear structure.,49,181
+0ed6dc21-e993-4c0b-885b-3dbfa7c1154c,"The build features a boxy frame with a slanted front. The rear section steps downward, creating varied levels.",4,38
+0ed6dc21-e993-4c0b-885b-3dbfa7c1154c,"The object is a small car with an angular structure. The front is sloped with blocky segments forming the body. The rear has a stepped design, with each section distinctly layered and offset, giving a multi-leveled appearance.",23,32
+930a8a6c-cc28-4053-a8ce-44200aa82dfb,"Compact car with blocky, angular contours.",12,70
+930a8a6c-cc28-4053-a8ce-44200aa82dfb,Small vehicle with a boxy shape and layered segments.,51,168
+930a8a6c-cc28-4053-a8ce-44200aa82dfb,Boxy car featuring a sloped front and stepped rear structure.,10,24
+930a8a6c-cc28-4053-a8ce-44200aa82dfb,"The build features a boxy frame with a slanted front. The rear section steps downward, creating varied levels.",5,1
+930a8a6c-cc28-4053-a8ce-44200aa82dfb,"The object is a small car with an angular structure. The front is sloped with blocky segments forming the body. The rear has a stepped design, with each section distinctly layered and offset, giving a multi-leveled appearance.",7,7
+271ec916-bdfc-46e5-b0a7-a53c259fa0ab,"Car with a compact, blocky build and angular contours.",53,316
+271ec916-bdfc-46e5-b0a7-a53c259fa0ab,Boxy car shape with a flat top and angular sides.,8,67
+271ec916-bdfc-46e5-b0a7-a53c259fa0ab,A compact car featuring a rectangular cabin with angled sides and a flat top.,34,58,2
+271ec916-bdfc-46e5-b0a7-a53c259fa0ab,This car has a cuboid shape with a stepped surface on its hood and roof. It features a recessed cabin area and a slightly elevated rear section.,6
+271ec916-bdfc-46e5-b0a7-a53c259fa0ab,"A small car with a rectangular cabin, flat roof, and angular sides. The front hood and rear are stepped, creating texture. The recessed cabin area sits lower than the hood and rear, adding depth and dimensionality.",15,192
+2067596e-622e-436b-b60a-558c9bc6f054,"Car with a compact, blocky build and angular contours.",193,261
+2067596e-622e-436b-b60a-558c9bc6f054,Boxy car shape with a flat top and angular sides.,27,102
+2067596e-622e-436b-b60a-558c9bc6f054,A compact car featuring a rectangular cabin with angled sides and a flat top.,14,93
+2067596e-622e-436b-b60a-558c9bc6f054,This car has a cuboid shape with a stepped surface on its hood and roof. It features a recessed cabin area and a slightly elevated rear section.,107,522
+2067596e-622e-436b-b60a-558c9bc6f054,"A small car with a rectangular cabin, flat roof, and angular sides. The front hood and rear are stepped, creating texture. The recessed cabin area sits lower than the hood and rear, adding depth and dimensionality.",27,41
+fd936c54-23ee-42fa-a9ce-ed15d5caa01c,Compact car with a rectangular form and layered details.,25,212
+fd936c54-23ee-42fa-a9ce-ed15d5caa01c,Rectangular car shape with a three-tiered roof and blocky bumpers.,43,341
+fd936c54-23ee-42fa-a9ce-ed15d5caa01c,Car featuring a flat-top roof and protruding front-end arrangement.,23,56
+fd936c54-23ee-42fa-a9ce-ed15d5caa01c,"Car with a flat roof, rounded front, blocky rear, and symmetrical sides.",36,141
+fd936c54-23ee-42fa-a9ce-ed15d5caa01c,"A car with a rectangular body, layered roof, and distinct front bumper. The front is rounded, while the back maintains a blocky shape. The symmetrical sides feature layered, horizontal detailing, contributing to the overall geometric design.",21,50
+015a5fa0-7868-46f8-91b4-ab164915fe2a,Compact car with a rectangular form and layered details.,61,338,1,2
+015a5fa0-7868-46f8-91b4-ab164915fe2a,Rectangular car shape with a three-tiered roof and blocky bumpers.,28,69
+015a5fa0-7868-46f8-91b4-ab164915fe2a,Car featuring a flat-top roof and protruding front-end arrangement.,28,94
+015a5fa0-7868-46f8-91b4-ab164915fe2a,"Car with a flat roof, rounded front, blocky rear, and symmetrical sides.",21,77
+015a5fa0-7868-46f8-91b4-ab164915fe2a,"A car with a rectangular body, layered roof, and distinct front bumper. The front is rounded, while the back maintains a blocky shape. The symmetrical sides feature layered, horizontal detailing, contributing to the overall geometric design.",39,150
+21ee218e-183d-4fe9-b079-d03c916d356c,Compact car with distinct geometric contours and layered structure.,140,877
+21ee218e-183d-4fe9-b079-d03c916d356c,"A compact vehicle with a solid, symmetrical build and consistent lines.",15,39
+21ee218e-183d-4fe9-b079-d03c916d356c,"This car features a squared-off rear with a raised central section, a moderately sloping front, and a uniform, tiered roofline.",18,45
+21ee218e-183d-4fe9-b079-d03c916d356c,"The car's squared rear transitions to a sloped front. Its tiered roof and symmetrical sides emphasize a layered arrangement, creating a uniform geometric aesthetic.",19,16
+21ee218e-183d-4fe9-b079-d03c916d356c,"The vehicle possesses a squared rear and a slightly sloping front, connected by a flat, tiered roof. The symmetrical sides and raised central section contribute to its balanced, cohesive form.",21,73
+6f17278d-ec97-475f-8206-f4355440e8e6,Compact car with distinct geometric contours and layered structure.,22,84
+6f17278d-ec97-475f-8206-f4355440e8e6,"A compact vehicle with a solid, symmetrical build and consistent lines.",5,71
+6f17278d-ec97-475f-8206-f4355440e8e6,"This car features a squared-off rear with a raised central section, a moderately sloping front, and a uniform, tiered roofline.",13,53
+6f17278d-ec97-475f-8206-f4355440e8e6,"The car's squared rear transitions to a sloped front. Its tiered roof and symmetrical sides emphasize a layered arrangement, creating a uniform geometric aesthetic.",24,42
+6f17278d-ec97-475f-8206-f4355440e8e6,"The vehicle possesses a squared rear and a slightly sloping front, connected by a flat, tiered roof. The symmetrical sides and raised central section contribute to its balanced, cohesive form.",54,161,1
+584ae1a1-6491-4267-b1a7-25000a3d3716,Car with angular build and tiered roof.,8,27
+584ae1a1-6491-4267-b1a7-25000a3d3716,Car featuring a rectangular body with layered roof and distinct edges.,13,62
+584ae1a1-6491-4267-b1a7-25000a3d3716,"Automobile with rectangular sides, layered top, and angled front.",25,69
+584ae1a1-6491-4267-b1a7-25000a3d3716,"A vehicle shape with an elongated rectangular base, tiered roof sections, and angular front end, each side displaying distinct rectangular forms.",16,40
+584ae1a1-6491-4267-b1a7-25000a3d3716,"The car consists of an elongated rectangular body, a segmented, tiered roof, and an angular front. The front section contains stepped layers, while the roof transitions smoothly from front to back. Rectangular forms define the sides, creating a unified structure.",14,125
+d47c953f-61b7-47fd-8044-dbd93f642e25,Car with angular build and tiered roof.,32,48
+d47c953f-61b7-47fd-8044-dbd93f642e25,Car featuring a rectangular body with layered roof and distinct edges.,6,84
+d47c953f-61b7-47fd-8044-dbd93f642e25,"Automobile with rectangular sides, layered top, and angled front.",18,30
+d47c953f-61b7-47fd-8044-dbd93f642e25,"A vehicle shape with an elongated rectangular base, tiered roof sections, and angular front end, each side displaying distinct rectangular forms.",43,202
+d47c953f-61b7-47fd-8044-dbd93f642e25,"The car consists of an elongated rectangular body, a segmented, tiered roof, and an angular front. The front section contains stepped layers, while the roof transitions smoothly from front to back. Rectangular forms define the sides, creating a unified structure.",147,580
+89940870-0689-4913-a667-f4b07deb5cd5,Compact car with an angular body and minimalist shape.,6,78
+89940870-0689-4913-a667-f4b07deb5cd5,"A small vehicle featuring a blocky, geometric body with a sloped hood.",57,201,1
+89940870-0689-4913-a667-f4b07deb5cd5,"Compact automobile with a rectangular chassis, tiered roof, and inset headlights.",13,5
+89940870-0689-4913-a667-f4b07deb5cd5,"The vehicle includes a rectangular base, a front sloped section, blocky wheels, and a tiered, elongated roof.",418,1120
+89940870-0689-4913-a667-f4b07deb5cd5,"A compact vehicle with a rectangular base, elevated square roof, sloped hood, and distinct brick patterning. The front features inset headlights, while the back is squared, providing a cohesive angular look.",10,141
+25e03378-b508-4c30-a25e-14aa6fff14c9,Compact car with an angular body and minimalist shape.,8,9
+25e03378-b508-4c30-a25e-14aa6fff14c9,"A small vehicle featuring a blocky, geometric body with a sloped hood.",15,42
+25e03378-b508-4c30-a25e-14aa6fff14c9,"Compact automobile with a rectangular chassis, tiered roof, and inset headlights.",19,93
+25e03378-b508-4c30-a25e-14aa6fff14c9,"The vehicle includes a rectangular base, a front sloped section, blocky wheels, and a tiered, elongated roof.",38,167,1
+25e03378-b508-4c30-a25e-14aa6fff14c9,"A compact vehicle with a rectangular base, elevated square roof, sloped hood, and distinct brick patterning. The front features inset headlights, while the back is squared, providing a cohesive angular look.",33,107
+d2a8ff1a-669f-43a2-bbb4-0d18be20b2ef,"Car with rectangular shape, blocky wheel arches, and raised sections.",8,106
+d2a8ff1a-669f-43a2-bbb4-0d18be20b2ef,"Rectangular car body with prominent front and rear projections, blocky edges.",38,76,1
+d2a8ff1a-669f-43a2-bbb4-0d18be20b2ef,"The car features a rectangular contour, front and rear projections, elevated cabin section toward the rear.",121,395
+d2a8ff1a-669f-43a2-bbb4-0d18be20b2ef,"Rectangular car outline with blocky projections front and rear, raised cabin area mid-rear, and vertical-sided wheel arches.",41,229
+d2a8ff1a-669f-43a2-bbb4-0d18be20b2ef,"Rectangular car form with blocky frontal and rear projections, raised mid-rear cabin, vertical wheel arches, and even surface segmentation.",17,71
+7c1e4078-3e7d-496e-9dcf-c436ce6053c4,"Car with rectangular shape, blocky wheel arches, and raised sections.",6,34
+7c1e4078-3e7d-496e-9dcf-c436ce6053c4,"Rectangular car body with prominent front and rear projections, blocky edges.",15,24
+7c1e4078-3e7d-496e-9dcf-c436ce6053c4,"The car features a rectangular contour, front and rear projections, elevated cabin section toward the rear.",58,407
+7c1e4078-3e7d-496e-9dcf-c436ce6053c4,"Rectangular car outline with blocky projections front and rear, raised cabin area mid-rear, and vertical-sided wheel arches.",3,3
+7c1e4078-3e7d-496e-9dcf-c436ce6053c4,"Rectangular car form with blocky frontal and rear projections, raised mid-rear cabin, vertical wheel arches, and even surface segmentation.",49,622
+177aba6d-887e-4961-b257-0754f7c68fe5,"A compact car with a boxy, angular shape.",71,270
+177aba6d-887e-4961-b257-0754f7c68fe5,Boxy car with angular contours and tiered layers.,24,58
+177aba6d-887e-4961-b257-0754f7c68fe5,Rectangular car form with a stepped top and blocky edges.,30,182
+177aba6d-887e-4961-b257-0754f7c68fe5,"A vehicle featuring a long, rectangular form, with a layered top section and defined, angular lines along its sides.",17,135
+177aba6d-887e-4961-b257-0754f7c68fe5,"A rectangular car with a stepped roof leading to a flat front. The vehicle has pronounced edges with layered sides and a flat rear section, exhibiting a symmetrical, geometric design.",5,1
+d2028aab-03ab-4e18-8521-89eb99891f7d,"Compact car shape with blocky, angular design.",20,67
+d2028aab-03ab-4e18-8521-89eb99891f7d,Angular car body with defined corners and flat surfaces.,34,337
+d2028aab-03ab-4e18-8521-89eb99891f7d,Rectangular car structure with a smooth top and angular body.,30,42
+d2028aab-03ab-4e18-8521-89eb99891f7d,"The car's body features a flat top, straight sides, and a defined front end with a distinct blocky shape.",22,34
+d2028aab-03ab-4e18-8521-89eb99891f7d,"A rectangular car with a flat roof, straight-lined sides, and a distinct, angular front. The body is elevated slightly at the sides, providing a cohesive shape to the entire form.",5,11
+687f6e8b-2e91-4e79-94f4-9a1fb65c371e,"Compact car shape with blocky, angular design.",10,29
+687f6e8b-2e91-4e79-94f4-9a1fb65c371e,Angular car body with defined corners and flat surfaces.,1
+687f6e8b-2e91-4e79-94f4-9a1fb65c371e,Rectangular car structure with a smooth top and angular body.
+687f6e8b-2e91-4e79-94f4-9a1fb65c371e,"The car's body features a flat top, straight sides, and a defined front end with a distinct blocky shape.",17,26
+687f6e8b-2e91-4e79-94f4-9a1fb65c371e,"A rectangular car with a flat roof, straight-lined sides, and a distinct, angular front. The body is elevated slightly at the sides, providing a cohesive shape to the entire form.",7,94
+2e869b57-dced-4340-bfde-c3de2f33f96c,"Compact vehicle with a block-like, rectangular form.",39,196
+2e869b57-dced-4340-bfde-c3de2f33f96c,"Boxy car with a layered, rectangular core and protruding back.",39,230
+2e869b57-dced-4340-bfde-c3de2f33f96c,"Rectangular car with tiered sections, flat top, and rear bump.",23,139
+2e869b57-dced-4340-bfde-c3de2f33f96c,"Vehicle with a rectangular body, segmented tiers, and protruding rear features. ",13,17
+2e869b57-dced-4340-bfde-c3de2f33f96c,"Car with a layered, rectangular body, flat top surface, side ridges, and a stepped rear end, creating a geometrically distinct form.",71,310
+383c62cf-fe3c-46cb-a9b0-6359f0744cc8,"Compact vehicle with a block-like, rectangular form.",12,71
+383c62cf-fe3c-46cb-a9b0-6359f0744cc8,"Boxy car with a layered, rectangular core and protruding back.",20,23
+383c62cf-fe3c-46cb-a9b0-6359f0744cc8,"Rectangular car with tiered sections, flat top, and rear bump.",92,580
+383c62cf-fe3c-46cb-a9b0-6359f0744cc8,"Vehicle with a rectangular body, segmented tiers, and protruding rear features. ",80,436,1
+383c62cf-fe3c-46cb-a9b0-6359f0744cc8,"Car with a layered, rectangular body, flat top surface, side ridges, and a stepped rear end, creating a geometrically distinct form.",1,27,121
+89832a48-cf89-40ae-9114-ee43edddacd3,"Compact car with a blocky, angular shape.",14,108
+89832a48-cf89-40ae-9114-ee43edddacd3,Miniature car featuring a flat roof and angular sides.,5,4
+89832a48-cf89-40ae-9114-ee43edddacd3,"Block-shaped car with a flat roof, straight sides, and layered detailing.",42,155
+89832a48-cf89-40ae-9114-ee43edddacd3,"Angular car design with a flat top, smooth front curves, and textured surface patterns on the hood and trunk.",99,483
+89832a48-cf89-40ae-9114-ee43edddacd3,"A compact car composed of stacked, angular segments. It features a flat roof, descending back, and a gently sloped front. The sides are straight with layered components, creating a stepped effect, and the textured hood and trunk add complexity to its profile.",24,183
+3886a4ed-47b3-427f-8c7f-4069e50d5d09,"Compact car with a blocky, angular shape."
+3886a4ed-47b3-427f-8c7f-4069e50d5d09,Miniature car featuring a flat roof and angular sides.,4,5
+3886a4ed-47b3-427f-8c7f-4069e50d5d09,"Block-shaped car with a flat roof, straight sides, and layered detailing.",29,158
+3886a4ed-47b3-427f-8c7f-4069e50d5d09,"Angular car design with a flat top, smooth front curves, and textured surface patterns on the hood and trunk.",4,44
+3886a4ed-47b3-427f-8c7f-4069e50d5d09,"A compact car composed of stacked, angular segments. It features a flat roof, descending back, and a gently sloped front. The sides are straight with layered components, creating a stepped effect, and the textured hood and trunk add complexity to its profile.",23,170
+f03a2964-6a32-41c4-afff-271221b3d692,A compact car with layered contours and blocky elements.,27,66
+f03a2964-6a32-41c4-afff-271221b3d692,"The car shows stepped outlines, a symmetrical front, and squared rear.",28,243
+f03a2964-6a32-41c4-afff-271221b3d692,"The vehicle's form features angled sides and a clustered, boxy front.",19,79
+f03a2964-6a32-41c4-afff-271221b3d692,"This car displays a tiered roof and straight-edged body, with irregular curvatures at the rear.",34,160
+f03a2964-6a32-41c4-afff-271221b3d692,"A car with a solid, rectangular form. It has a layered, recessed front, midsection steps down on both sides, culminating in a squared rear. The blocky construction creates a pattern of elevation changes, particularly noticeable on the roof and rear section.",22,144
+e6ccef6e-c3cf-426c-a013-50163a69c187,Compact car with rectangular body and a vertical rod.,182,740
+e6ccef6e-c3cf-426c-a013-50163a69c187,Rectangular car shape featuring a prominent central rod.,51,400
+e6ccef6e-c3cf-426c-a013-50163a69c187,"Car with a flat, rectangular form, incorporating a vertical rod and brick-like sections.",23,143
+e6ccef6e-c3cf-426c-a013-50163a69c187,"Four-wheeled car with a low rectangular body, vertical rod centered, and tiered front grille.",32,80
+e6ccef6e-c3cf-426c-a013-50163a69c187,"The car has a flat rectangular body, distinct tiered front, and an elongated vertical rod offset to one side. The bottom section is tiered, accentuating the wheelbase, while the front grille features repeating horizontal patterns.",22,254
+84adb7af-f683-4746-9c18-f4e280079766,Compact car with rectangular body and a vertical rod.,13,37
+84adb7af-f683-4746-9c18-f4e280079766,Rectangular car shape featuring a prominent central rod.,4,6
+84adb7af-f683-4746-9c18-f4e280079766,"Car with a flat, rectangular form, incorporating a vertical rod and brick-like sections.",19,42
+84adb7af-f683-4746-9c18-f4e280079766,"Four-wheeled car with a low rectangular body, vertical rod centered, and tiered front grille.",86,488
+84adb7af-f683-4746-9c18-f4e280079766,"The car has a flat rectangular body, distinct tiered front, and an elongated vertical rod offset to one side. The bottom section is tiered, accentuating the wheelbase, while the front grille features repeating horizontal patterns.",45,300
+ceb2be39-583a-46c0-856e-bdd78034e26a,Compact car with angular form and distinct blocky elements.,57,364
+ceb2be39-583a-46c0-856e-bdd78034e26a,"Boxy car with a rectangular body, flat roof, and stacked contours.",2,2
+ceb2be39-583a-46c0-856e-bdd78034e26a,Prominent front end of the car leads to a sloped windshield. Smooth roof transitions to a flat rear section.,13,123
+ceb2be39-583a-46c0-856e-bdd78034e26a,"Car with a squared-off front, elongated sides, and a stepped roofline. The rear has a slightly elevated structure.",2,1
+ceb2be39-583a-46c0-856e-bdd78034e26a,"Car featuring angular sides, a flat top, and a pronounced, layered rear. The front is wider at the base with an upward taper.",40,292
+2088f7b8-faa4-4300-bc69-a0f4f931479f,Compact car with angular form and distinct blocky elements.,31,39
+2088f7b8-faa4-4300-bc69-a0f4f931479f,"Boxy car with a rectangular body, flat roof, and stacked contours.",39,210
+2088f7b8-faa4-4300-bc69-a0f4f931479f,Prominent front end of the car leads to a sloped windshield. Smooth roof transitions to a flat rear section.,36,62
+2088f7b8-faa4-4300-bc69-a0f4f931479f,"Car with a squared-off front, elongated sides, and a stepped roofline. The rear has a slightly elevated structure.",13,66
+2088f7b8-faa4-4300-bc69-a0f4f931479f,"Car featuring angular sides, a flat top, and a pronounced, layered rear. The front is wider at the base with an upward taper.",15,87
+a105b8e4-78b2-4cfd-83b1-638507d5be20,"A compact car with a geometric, layered structure.",3,110
+a105b8e4-78b2-4cfd-83b1-638507d5be20,A boxy car with angular layers and staggered edges.,25,137
+a105b8e4-78b2-4cfd-83b1-638507d5be20,"Car featuring a flat rooftop, rectangular sides, and blocky wheel arches.",70,168
+a105b8e4-78b2-4cfd-83b1-638507d5be20,"Car with a tiered roof, block-like sides, recessed wheels, and a rectangular rear.",3,3
+a105b8e4-78b2-4cfd-83b1-638507d5be20,"A car composed of layered, rectangular elements. The roof is flat and elongated, with stepped edges leading down to the sides. The sides are formed by block-like shapes with indented sections for wheels. The front and rear present a grid-like facade, completing the boxy appearance.",48,196
+437e2d12-058f-4be0-86ce-78cc887444db,"A compact car with a geometric, layered structure.",367,1430,1
+437e2d12-058f-4be0-86ce-78cc887444db,A boxy car with angular layers and staggered edges.,48,116
+437e2d12-058f-4be0-86ce-78cc887444db,"Car featuring a flat rooftop, rectangular sides, and blocky wheel arches.",11,81
+437e2d12-058f-4be0-86ce-78cc887444db,"Car with a tiered roof, block-like sides, recessed wheels, and a rectangular rear.",17,68
+437e2d12-058f-4be0-86ce-78cc887444db,"A car composed of layered, rectangular elements. The roof is flat and elongated, with stepped edges leading down to the sides. The sides are formed by block-like shapes with indented sections for wheels. The front and rear present a grid-like facade, completing the boxy appearance.",12,27
+49fe09ac-ef1d-49cd-afce-e34ea170e4fe,Car with blocky form and prominent front grille.,158,891
+49fe09ac-ef1d-49cd-afce-e34ea170e4fe,Blocky car with rectangular body and distinct front section.,49,196
+49fe09ac-ef1d-49cd-afce-e34ea170e4fe,Rectangular car featuring a protruding front grille and tiered top.,142,336
+49fe09ac-ef1d-49cd-afce-e34ea170e4fe,"A robust car with a rectangular base, rising tiers, and a pronounced front grille."
+49fe09ac-ef1d-49cd-afce-e34ea170e4fe,"The car has a rectangular base with an elevated tiered roof, blocky front grille, and evenly spaced elements. The front grille protrudes prominently, while the rear is slightly raised.",13,51
+3282da74-f43d-46cc-82d0-b3c6665356f1,Car with blocky form and prominent front grille.,66,104
+3282da74-f43d-46cc-82d0-b3c6665356f1,Blocky car with rectangular body and distinct front section.,13,158,1
+3282da74-f43d-46cc-82d0-b3c6665356f1,Rectangular car featuring a protruding front grille and tiered top.,53,108
+3282da74-f43d-46cc-82d0-b3c6665356f1,"A robust car with a rectangular base, rising tiers, and a pronounced front grille.",17,79
+3282da74-f43d-46cc-82d0-b3c6665356f1,"The car has a rectangular base with an elevated tiered roof, blocky front grille, and evenly spaced elements. The front grille protrudes prominently, while the rear is slightly raised.",18,122
+1ee108e7-0c1b-4ae8-bf9f-1a947bff2264,Compact car with a squared body and elevated form.,6,39
+1ee108e7-0c1b-4ae8-bf9f-1a947bff2264,Compact vehicle featuring a block-like body with elevated rear.,48,258,1
+1ee108e7-0c1b-4ae8-bf9f-1a947bff2264,"Boxy automobile with a tiered, elevated rear and recessed wheels.",10,28
+1ee108e7-0c1b-4ae8-bf9f-1a947bff2264,"Box-like car with a stepped design, recessed wheel arches, and leveled rear.",2,7
+1ee108e7-0c1b-4ae8-bf9f-1a947bff2264,"A compact car with a blocky shape, featuring a slightly raised rear section and recessed wheels forming subtle arches. The body is composed of a squared front tapering towards the back, creating an elevated, tiered rear design.",17,110
+678df8cf-b2af-4d31-8258-844c09acbc49,Compact car with a squared body and elevated form.,44,140
+678df8cf-b2af-4d31-8258-844c09acbc49,Compact vehicle featuring a block-like body with elevated rear.,161,524
+678df8cf-b2af-4d31-8258-844c09acbc49,"Boxy automobile with a tiered, elevated rear and recessed wheels.",65,275
+678df8cf-b2af-4d31-8258-844c09acbc49,"Box-like car with a stepped design, recessed wheel arches, and leveled rear.",61,271
+678df8cf-b2af-4d31-8258-844c09acbc49,"A compact car with a blocky shape, featuring a slightly raised rear section and recessed wheels forming subtle arches. The body is composed of a squared front tapering towards the back, creating an elevated, tiered rear design.",11,58
+a5be8fac-2792-4102-8a7d-5226cd23a9ff,Compact car with an angular build and layered heights.,44,256,1
+a5be8fac-2792-4102-8a7d-5226cd23a9ff,Small car featuring blocky contours and tiered elevations throughout.,62,197
+a5be8fac-2792-4102-8a7d-5226cd23a9ff,Angled car structure with distinct steps and staggered levels on top.,16,109
+a5be8fac-2792-4102-8a7d-5226cd23a9ff,"A compact automobile having a rectangular base, stepped upper segments, and evenly distributed block formations.",16,65
+a5be8fac-2792-4102-8a7d-5226cd23a9ff,"A compact car featuring a rectangular base structure with horizontally aligned block layers forming a tiered roof. The top consists of three distinct stepped sections, each varying slightly in elevation, creating a staggered appearance across the upper surface.",245,1219,1
+08c3fe17-7a4a-40cd-8619-4c63823ec960,Compact car with an angular build and layered heights.,53,159
+08c3fe17-7a4a-40cd-8619-4c63823ec960,Small car featuring blocky contours and tiered elevations throughout.,25,64
+08c3fe17-7a4a-40cd-8619-4c63823ec960,Angled car structure with distinct steps and staggered levels on top.,74,170
+08c3fe17-7a4a-40cd-8619-4c63823ec960,"A compact automobile having a rectangular base, stepped upper segments, and evenly distributed block formations.",12,22
+08c3fe17-7a4a-40cd-8619-4c63823ec960,"A compact car featuring a rectangular base structure with horizontally aligned block layers forming a tiered roof. The top consists of three distinct stepped sections, each varying slightly in elevation, creating a staggered appearance across the upper surface.",64,113
+b41495df-829d-4948-b6ad-d7bc0ef1e458,"Compact car with a blocky, angular form.",64,275
+b41495df-829d-4948-b6ad-d7bc0ef1e458,"Rectangular car featuring a distinct, stepped roofline and angular sides.",15,36
+b41495df-829d-4948-b6ad-d7bc0ef1e458,"Car with a stepped roof and tiered front, displaying prominent, sharp angles.",2,48
+b41495df-829d-4948-b6ad-d7bc0ef1e458,"A geometric car with a layered roof, squared-off front section, and defined, angular sides featuring block-like protrusions at the rear.",49,154
+b41495df-829d-4948-b6ad-d7bc0ef1e458,"A car characterized by a segmented, multi-tiered roof and a sharply angular front. The sides are straight with layered edges, while the rear features block-like protrusions extending outward. Boxy elements define the front and rear sections, contributing to its overall angular facade.",11,54
+0b7c4659-4473-44f7-a0dd-655ccca0daa0,"Compact car with a blocky, angular form.",1,7,6
+0b7c4659-4473-44f7-a0dd-655ccca0daa0,"Rectangular car featuring a distinct, stepped roofline and angular sides.",16,10
+0b7c4659-4473-44f7-a0dd-655ccca0daa0,"Car with a stepped roof and tiered front, displaying prominent, sharp angles.",23,215
+0b7c4659-4473-44f7-a0dd-655ccca0daa0,"A geometric car with a layered roof, squared-off front section, and defined, angular sides featuring block-like protrusions at the rear.",3,3
+0b7c4659-4473-44f7-a0dd-655ccca0daa0,"A car characterized by a segmented, multi-tiered roof and a sharply angular front. The sides are straight with layered edges, while the rear features block-like protrusions extending outward. Boxy elements define the front and rear sections, contributing to its overall angular facade.",3,1
+819d29a2-5c0e-4c8f-a91b-790928b47385,Car with angular shape and blocky outline.,34,263
+819d29a2-5c0e-4c8f-a91b-790928b47385,Compact car with a flat top and squared front section.,27,123
+819d29a2-5c0e-4c8f-a91b-790928b47385,Blocky car design with an angled hood and elevated rear end.,13,3
+819d29a2-5c0e-4c8f-a91b-790928b47385,"Car featuring a rectangular main body, angled front, elevated rear, and a series of evenly spaced protrusions along the top surface.",6,60
+819d29a2-5c0e-4c8f-a91b-790928b47385,"A car with a flat and squared front end, a sloping hood, and distinct rectangular sections that suggest both a roof and trunk area. The rear end elevates slightly, contributing to its angular profile, while the top surface displays uniform indentations aligned across its length.",67,274,1
+c0c1a165-7996-4e29-87f7-f3b06b890f25,Car with angular shape and blocky outline.,3,45
+c0c1a165-7996-4e29-87f7-f3b06b890f25,Compact car with a flat top and squared front section.,24,91
+c0c1a165-7996-4e29-87f7-f3b06b890f25,Blocky car design with an angled hood and elevated rear end.,65,637
+c0c1a165-7996-4e29-87f7-f3b06b890f25,"Car featuring a rectangular main body, angled front, elevated rear, and a series of evenly spaced protrusions along the top surface.",113,483
+c0c1a165-7996-4e29-87f7-f3b06b890f25,"A car with a flat and squared front end, a sloping hood, and distinct rectangular sections that suggest both a roof and trunk area. The rear end elevates slightly, contributing to its angular profile, while the top surface displays uniform indentations aligned across its length.",3,37
+83576f2c-35b7-4018-9b52-ef72c7237e85,Compact car with simplified geometric contours and a cubic structure.,15,83
+83576f2c-35b7-4018-9b52-ef72c7237e85,A small car featuring a rectangular body and smooth-edged curves.,33,41
+83576f2c-35b7-4018-9b52-ef72c7237e85,"Car with rectangular base, rounded top, alternating block heights suggesting a roof."
+83576f2c-35b7-4018-9b52-ef72c7237e85,"Small car with a rectangular rear section, a rounded top, and evenly distributed block patterns across the surface.",25,102
+83576f2c-35b7-4018-9b52-ef72c7237e85,"Compact car with a rectangular base, gently sloping front, rounded top, and block arrangement defining the roof's gentle curve. The car's sides exhibit a layered arrangement, while the front and rear maintain a consistent, blocky geometry.",121,310
+c68e854a-f337-48a6-9169-eaab40f5fce5,Compact car with simplified geometric contours and a cubic structure.,11,12
+c68e854a-f337-48a6-9169-eaab40f5fce5,A small car featuring a rectangular body and smooth-edged curves.,14,103
+c68e854a-f337-48a6-9169-eaab40f5fce5,"Car with rectangular base, rounded top, alternating block heights suggesting a roof.",22,162
+c68e854a-f337-48a6-9169-eaab40f5fce5,"Small car with a rectangular rear section, a rounded top, and evenly distributed block patterns across the surface.",128,445,1
+c68e854a-f337-48a6-9169-eaab40f5fce5,"Compact car with a rectangular base, gently sloping front, rounded top, and block arrangement defining the roof's gentle curve. The car's sides exhibit a layered arrangement, while the front and rear maintain a consistent, blocky geometry.",13,69
+1ec35eb7-b136-4957-bf26-02edabe52219,"Compact car with a blocky, rectangular form.",44,59
+1ec35eb7-b136-4957-bf26-02edabe52219,Box-shaped vehicle featuring angular edges and flat surfaces.,62,427
+1ec35eb7-b136-4957-bf26-02edabe52219,"Rectangular automobile with a flat roof, cuboid body, and recessed sides.",24,122
+1ec35eb7-b136-4957-bf26-02edabe52219,"An angular car with a flat top and side indentations. The front and rear are squared, enhancing its blocky appearance.",23,168
+1ec35eb7-b136-4957-bf26-02edabe52219,The car is rectangular with a flat roof and step-like contours on the sides. The front and back are symmetrically squared. The vehicle's underside creates a layered look by extending outward slightly.,1
+4502f146-3295-47e3-9031-73a06b39ad92,"Compact car with a blocky, rectangular form."
+4502f146-3295-47e3-9031-73a06b39ad92,Box-shaped vehicle featuring angular edges and flat surfaces.,31,211
+4502f146-3295-47e3-9031-73a06b39ad92,"Rectangular automobile with a flat roof, cuboid body, and recessed sides.",73,514,4
+4502f146-3295-47e3-9031-73a06b39ad92,"An angular car with a flat top and side indentations. The front and rear are squared, enhancing its blocky appearance.",41,177
+4502f146-3295-47e3-9031-73a06b39ad92,The car is rectangular with a flat roof and step-like contours on the sides. The front and back are symmetrically squared. The vehicle's underside creates a layered look by extending outward slightly.,10,89
+86a156d5-f792-4ef7-8c13-23c54a842372,Compact car with a boxy appearance and flat surfaces.,31,138
+86a156d5-f792-4ef7-8c13-23c54a842372,Rectangular car with tiered horizontal layers and angular edges.,6,58
+86a156d5-f792-4ef7-8c13-23c54a842372,"Car with a rectangular base, staggered layers, and sharp, blocky corners.",16,34
+86a156d5-f792-4ef7-8c13-23c54a842372,"Boxy car made of stacked geometric bricks, forming a rectangular main body, elevated roof, and flat hood.",40,194
+86a156d5-f792-4ef7-8c13-23c54a842372,"A car composed of staggered bricks creating a boxy shape. The roof is elevated slightly above the main body, which is a simple rectangle. The front and rear are flat, with defined, angular edges enhancing the streamlined appearance.",3,5
+9c93790b-6b9c-4cab-b381-1e6a196fdeaa,Compact car with a boxy appearance and flat surfaces.,14,113
+9c93790b-6b9c-4cab-b381-1e6a196fdeaa,Rectangular car with tiered horizontal layers and angular edges.,103,363
+9c93790b-6b9c-4cab-b381-1e6a196fdeaa,"Car with a rectangular base, staggered layers, and sharp, blocky corners.",44,316
+9c93790b-6b9c-4cab-b381-1e6a196fdeaa,"Boxy car made of stacked geometric bricks, forming a rectangular main body, elevated roof, and flat hood.",20,45
+9c93790b-6b9c-4cab-b381-1e6a196fdeaa,"A car composed of staggered bricks creating a boxy shape. The roof is elevated slightly above the main body, which is a simple rectangle. The front and rear are flat, with defined, angular edges enhancing the streamlined appearance.",113,363
+2ebcec4f-6bdb-48f8-aaa2-f251e0e3ecf9,Compact vehicle with angular shapes and elevated structure.,16,150
+2ebcec4f-6bdb-48f8-aaa2-f251e0e3ecf9,Small automobile featuring a blocky form and raised chassis outline.,5
+2ebcec4f-6bdb-48f8-aaa2-f251e0e3ecf9,Boxy car with pronounced wheel arches and distinct layered body design.,21,203
+2ebcec4f-6bdb-48f8-aaa2-f251e0e3ecf9,"A vehicle with a raised, angular body, pronounced wheel arches, and layered geometric features.",24,131
+2ebcec4f-6bdb-48f8-aaa2-f251e0e3ecf9,"A car with a blocky, elevated form, showcasing angular wheel arches. The body is composed of stacked, rectangular layers, creating a stepped effect towards the front. The middle section is broader, tapering slightly at the front and rear.",35,99
+d6ea3922-8f0c-4b78-b144-3e6a1b79f384,Compact vehicle with angular shapes and elevated structure.,2,15
+d6ea3922-8f0c-4b78-b144-3e6a1b79f384,Small automobile featuring a blocky form and raised chassis outline.,52,174
+d6ea3922-8f0c-4b78-b144-3e6a1b79f384,Boxy car with pronounced wheel arches and distinct layered body design.,16,46
+d6ea3922-8f0c-4b78-b144-3e6a1b79f384,"A vehicle with a raised, angular body, pronounced wheel arches, and layered geometric features.",5
+d6ea3922-8f0c-4b78-b144-3e6a1b79f384,"A car with a blocky, elevated form, showcasing angular wheel arches. The body is composed of stacked, rectangular layers, creating a stepped effect towards the front. The middle section is broader, tapering slightly at the front and rear.",37,78
+4f9a8674-c56a-43b8-9ac2-919713025808,"Compact car with blocky contours and a low, flat roof.",46,292
+4f9a8674-c56a-43b8-9ac2-919713025808,A blocky car featuring a rectangular chassis and an angular roofline.,20,59
+4f9a8674-c56a-43b8-9ac2-919713025808,"This car has a boxy shape with a low, flat rooftop and a recessed front.",30,68,1
+4f9a8674-c56a-43b8-9ac2-919713025808,"A solid, rectangular car structure with a low profile and defined edges, complete with a tiered roof and recessed bodywork.",15,16
+4f9a8674-c56a-43b8-9ac2-919713025808,"The car displays a compact, blocky form with a rectangular body, low flat roof, and recessed front section. It has angular sides with distinct horizontal lines, and the roof is slightly tiered toward the rear.",24,69
+b75fc9db-29ef-4a6d-ac06-9995dde88ffa,"Compact car with blocky contours and a low, flat roof."
+b75fc9db-29ef-4a6d-ac06-9995dde88ffa,A blocky car featuring a rectangular chassis and an angular roofline.,31,144
+b75fc9db-29ef-4a6d-ac06-9995dde88ffa,"This car has a boxy shape with a low, flat rooftop and a recessed front.",9,40
+b75fc9db-29ef-4a6d-ac06-9995dde88ffa,"A solid, rectangular car structure with a low profile and defined edges, complete with a tiered roof and recessed bodywork.",4,12
+b75fc9db-29ef-4a6d-ac06-9995dde88ffa,"The car displays a compact, blocky form with a rectangular body, low flat roof, and recessed front section. It has angular sides with distinct horizontal lines, and the roof is slightly tiered toward the rear.",1,2,13
+32f25ce5-253b-4365-b7ea-95974bce52b6,Car with a block-like rectangular shape and smooth edges.,13,105
+32f25ce5-253b-4365-b7ea-95974bce52b6,"Compact automobile featuring a long, flat top and squared corners.",3,12
+32f25ce5-253b-4365-b7ea-95974bce52b6,"Vehicle with a flat, rectangular roof and angular front and back sections.",5,8,1
+32f25ce5-253b-4365-b7ea-95974bce52b6,"Automobile with a flat top extending edge-to-edge, and a broad body with evenly aligned rectangular patterns and subtle corner cutouts.",15,81
+32f25ce5-253b-4365-b7ea-95974bce52b6,"Box-shaped car featuring a rectangular form, with a flat roof stretching from end to end. The structure has angled sides and a solid base, with subtle indentations along its edges and evenly distributed geometric details along its length.",1
+dc2cd9f4-684f-4604-b789-d35267202ab2,Car with a block-like rectangular shape and smooth edges.,12,52
+dc2cd9f4-684f-4604-b789-d35267202ab2,"Compact automobile featuring a long, flat top and squared corners.",44,167
+dc2cd9f4-684f-4604-b789-d35267202ab2,"Vehicle with a flat, rectangular roof and angular front and back sections.",4,1
+dc2cd9f4-684f-4604-b789-d35267202ab2,"Automobile with a flat top extending edge-to-edge, and a broad body with evenly aligned rectangular patterns and subtle corner cutouts.",50,231
+dc2cd9f4-684f-4604-b789-d35267202ab2,"Box-shaped car featuring a rectangular form, with a flat roof stretching from end to end. The structure has angled sides and a solid base, with subtle indentations along its edges and evenly distributed geometric details along its length.",44,181
+ce715e37-651c-4450-94da-5088e4a8b03d,Compact car with a streamlined geometric form.,3,1
+ce715e37-651c-4450-94da-5088e4a8b03d,"Car featuring a low-slung, elongated body, and angular edges.",3,4
+ce715e37-651c-4450-94da-5088e4a8b03d,"Angular car with prominent front section, elevated rear, and a flat roof.",20,225
+ce715e37-651c-4450-94da-5088e4a8b03d,"Geometric car with an elongated, rectangular body, angular front and rear, and a low, flat roofline.",16,107,1
+ce715e37-651c-4450-94da-5088e4a8b03d,"A streamlined car showcasing an elongated, rectangular main body with angular edges. The front is designed with an inclined surface, while the rear elevates slightly. The car's roof remains flat, contrasting with the slightly angled windows and compressed wheels integrated beneath the body.",5,21
+b5554d77-12fc-41fa-be34-1f3c93034df7,Compact car with a streamlined geometric form.,33,52
+b5554d77-12fc-41fa-be34-1f3c93034df7,"Car featuring a low-slung, elongated body, and angular edges.",69,324
+b5554d77-12fc-41fa-be34-1f3c93034df7,"Angular car with prominent front section, elevated rear, and a flat roof.",33,104
+b5554d77-12fc-41fa-be34-1f3c93034df7,"Geometric car with an elongated, rectangular body, angular front and rear, and a low, flat roofline.",80,274
+b5554d77-12fc-41fa-be34-1f3c93034df7,"A streamlined car showcasing an elongated, rectangular main body with angular edges. The front is designed with an inclined surface, while the rear elevates slightly. The car's roof remains flat, contrasting with the slightly angled windows and compressed wheels integrated beneath the body.",13,12
+37cb7a00-5d89-471b-86f7-6cad587ceacf,Car with multiple geometric protrusions and elevations.,23,55
+37cb7a00-5d89-471b-86f7-6cad587ceacf,Compact car featuring stepped surfaces and layered components.,6
+37cb7a00-5d89-471b-86f7-6cad587ceacf,Automobile with tiered blocks forming the roof and elongated body.,90,266
+37cb7a00-5d89-471b-86f7-6cad587ceacf,"Vehicle showcasing stacked elements, a distinct blocky roof, and raised sections.",102,430
+37cb7a00-5d89-471b-86f7-6cad587ceacf,"Car composed of tiered elements, creating a stepped roof and elongated body. The front features layered sections forming a flat hood, while the rear is elevated with geometric projections. The profile is defined by interlocking components, forming a compact yet complex shape.",37,224
+73117b97-bb23-4508-8f2a-41b7818e5914,Car with multiple geometric protrusions and elevations.,71,343
+73117b97-bb23-4508-8f2a-41b7818e5914,Compact car featuring stepped surfaces and layered components.,54,500,1
+73117b97-bb23-4508-8f2a-41b7818e5914,Automobile with tiered blocks forming the roof and elongated body.,39,167
+73117b97-bb23-4508-8f2a-41b7818e5914,"Vehicle showcasing stacked elements, a distinct blocky roof, and raised sections.",32,105
+73117b97-bb23-4508-8f2a-41b7818e5914,"Car composed of tiered elements, creating a stepped roof and elongated body. The front features layered sections forming a flat hood, while the rear is elevated with geometric projections. The profile is defined by interlocking components, forming a compact yet complex shape.",99,188
+51290826-4799-4ab9-bd92-16acf3e7770f,Compact car with distinct block-like structure.,100,183
+51290826-4799-4ab9-bd92-16acf3e7770f,Blocky car with angular contours and raised sections.,37,141
+51290826-4799-4ab9-bd92-16acf3e7770f,"Car featuring angular edges, a stepped roof, and smooth base.",28,122
+51290826-4799-4ab9-bd92-16acf3e7770f,"Car with a raised, rectangular roof, sloped front, and smooth underside. Robust rectangular components at both ends add to its symmetry.",106,377,1
+51290826-4799-4ab9-bd92-16acf3e7770f,"Car with a raised, rectangular roof sloping into a flat hood at the front, while its broadened rear features a boxy shape. The car rests on four blocky supports, with a smooth underside completing its solid form.",38,195,1
+e9fd254b-dd72-4e8f-ab2a-580e79f78d13,Compact car with distinct block-like structure.,15,146
+e9fd254b-dd72-4e8f-ab2a-580e79f78d13,Blocky car with angular contours and raised sections.,69,353,1
+e9fd254b-dd72-4e8f-ab2a-580e79f78d13,"Car featuring angular edges, a stepped roof, and smooth base.",7,51
+e9fd254b-dd72-4e8f-ab2a-580e79f78d13,"Car with a raised, rectangular roof, sloped front, and smooth underside. Robust rectangular components at both ends add to its symmetry.",17,14
+e9fd254b-dd72-4e8f-ab2a-580e79f78d13,"Car with a raised, rectangular roof sloping into a flat hood at the front, while its broadened rear features a boxy shape. The car rests on four blocky supports, with a smooth underside completing its solid form.",43,273,1
+11b381ff-e0ec-41ef-914a-edd69365506b,Compact vehicle with an angled roof and symmetrical sides.,9,103,2
+11b381ff-e0ec-41ef-914a-edd69365506b,Boxy car shape featuring a sloped front and flat rear surface.,8,1
+11b381ff-e0ec-41ef-914a-edd69365506b,Geometric car design with a rounded roof tapering into squared rear corners.,2,81,323,1
+11b381ff-e0ec-41ef-914a-edd69365506b,"Rectangular car body with angular features: a rounded roof, broad front, and squared rear corners.",8,23
+11b381ff-e0ec-41ef-914a-edd69365506b,"A rectangular car body with a rounded roof, sloped front, and flat rear. Its facade is broad and its sides symmetrical, height slightly tapering towards the front. The roof is outlined with smaller protrusions, adding subtle dimensionality.",8,11
