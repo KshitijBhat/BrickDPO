@@ -60,25 +60,25 @@ def convert_csv_to_parquet(csv_path, parquet_path):
 
 
 def main():
-    base_dir = Path(__file__).parent / "datasets" / "dpo_datasets"
+    base_dir = Path(__file__).parent / "datasets" / "dpo_datasets" / "train_DPO_500"
     
-    # Process test_011_039
-    csv_path_011 = base_dir / "test_011_039" / "dpo_data.csv"
-    parquet_path_011 = base_dir / "test_011_039" / "dpo_data.parquet"
+    # List of directory names to process
+    directory_names = [
+        "test_200_299",
+        "train_300_399",
+        "train_400_599",
+        "train_600_649",
+        "train_650_799"
+    ]
     
-    if csv_path_011.exists():
-        convert_csv_to_parquet(csv_path_011, parquet_path_011)
-    else:
-        print(f"Warning: {csv_path_011} does not exist")
-    
-    # Process test_040_099
-    csv_path_040 = base_dir / "test_040_099" / "dpo_data.csv"
-    parquet_path_040 = base_dir / "test_040_099" / "dpo_data.parquet"
-    
-    if csv_path_040.exists():
-        convert_csv_to_parquet(csv_path_040, parquet_path_040)
-    else:
-        print(f"Warning: {csv_path_040} does not exist")
+    for dir_name in directory_names:
+        csv_path = base_dir / dir_name / "dpo_data_process.csv"
+        parquet_path = base_dir / dir_name / "dpo_data_process.parquet"
+        
+        if csv_path.exists():
+            convert_csv_to_parquet(csv_path, parquet_path)
+        else:
+            print(f"Warning: {csv_path} does not exist")
 
 
 if __name__ == "__main__":

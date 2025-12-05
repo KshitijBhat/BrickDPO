@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge CSV stats files from all test* subdirectories."""
+"""Merge CSV stats files and parquet files from all test* subdirectories."""
 
 import pandas as pd
 from pathlib import Path
@@ -60,6 +60,31 @@ for filename in files_to_merge:
         print(f"  Saved {len(merged_df)} rows to {output_path}\n")
     else:
         print(f"  No files found for {filename}\n")
+
+# Merge parquet files
+print("="*50)
+print("Merging parquet files...")
+parquet_filename = "dpo_data_process.parquet"
+parquet_dfs = []
+
+for test_dir in test_dirs:
+    filepath = test_dir / parquet_filename
+    if filepath.exists():
+        try:
+            df = pd.read_parquet(filepath)
+            parquet_dfs.append(df)
+            print(f"  Read {len(df)} rows from {test_dir.name}/{parquet_filename}")
+        except Exception as e:
+            print(f"  Error reading {test_dir.name}/{parquet_filename}: {e}")
+            continue
+
+if parquet_dfs:
+    merged_parquet_df = pd.concat(parquet_dfs, ignore_index=True)
+    output_parquet_path = output_dir / parquet_filename
+    merged_parquet_df.to_parquet(output_parquet_path, index=False)
+    print(f"  Saved {len(merged_parquet_df)} rows to {output_parquet_path}\n")
+else:
+    print(f"  No parquet files found for {parquet_filename}\n")
 
 print("Done!")
 
