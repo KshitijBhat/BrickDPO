@@ -15,3 +15,4 @@ wandb
 .DS_Store
 
 proj_develop/batch_outputs/
+proj_develop/sft_brickgpt

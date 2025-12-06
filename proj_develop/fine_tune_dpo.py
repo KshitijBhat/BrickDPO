@@ -18,7 +18,7 @@ class ScriptArguments:
     Arguments for the DPO training script.
     """
     # Model arguments
-    model_name_or_path: str = "AvaLovelace/BrickGPT"
+    model_name_or_path: str = "sft_brickgpt"  # Path to SFT meta-llama/Llama-3.2-1B-Instruct model
     dataset_path: str = "datasets/dpo_datasets/combined_dataset/dpo_hf.parquet"
     output_dir: str = "dpo_output"
     
@@ -89,7 +89,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         torch_dtype=torch.bfloat16, # Matching your SFT script
-        attn_implementation="eager",
+        attn_implementation="flash_attention_2", # Llama 3 optimization
         device_map="auto"
     )
 
