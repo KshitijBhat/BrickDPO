@@ -12,44 +12,52 @@ from transformers import (
 )
 from trl import DPOConfig, DPOTrainer
 
-@dataclass
+# @dataclass
 class ScriptArguments:
     """
     Arguments for the DPO training script.
     """
     # Model arguments
-    model_name_or_path: Optional[str] = field(
-        default="AvaLovelace/BrickGPT", 
-        metadata={"help": "Path to the SFT checkpoint (your input model)"}
-    )
-    dataset_path: Optional[str] = field(
-        default="dpo_dataset.parquet", 
-        metadata={"help": "Path to the DPO dataset parquet file"}
-    )
-    output_dir: Optional[str] = field(
-        default="dpo_output", 
-        metadata={"help": "Where to save the model"}
-    )
+    model_name_or_path: str = "AvaLovelace/BrickGPT"
+    dataset_path: str = "/home/kshitij/Documents/Courses/10623/Project/10623-ConditionedBrickGPT/src/brickgpt/dpo_dataset.parquet"
+    output_dir: str = "dpo_output"
     
     # LoRA arguments (Matched to your finetune.zsh)
-    use_peft: bool = field(default=True, metadata={"help": "Whether to use PEFT/LoRA"})
-    lora_r: int = field(default=32, metadata={"help": "LoRA R value"})
-    lora_alpha: int = field(default=16, metadata={"help": "LoRA Alpha value"})
-    lora_dropout: float = field(default=0.05, metadata={"help": "LoRA Dropout"})
-    lora_target_modules: list[str] = field(
-        default_factory=lambda: ["q_proj", "v_proj"], 
-        metadata={"help": "Target modules for LoRA"}
-    )
+    use_peft: bool = True
+    lora_r: int = 32
+    lora_alpha: int = 16
+    lora_dropout: float = 0.05
+    lora_target_modules: list[str] = ["q_proj", "v_proj"]
 
     # DPO Specifics
-    beta: float = field(default=0.1, metadata={"help": "The beta parameter for DPO loss"})
-    max_length: int = field(default=8192, metadata={"help": "Max sequence length (matches your SFT)"})
-    max_prompt_length: int = field(default=4096, metadata={"help": "Max prompt length"})
+    beta: float = 0.1
+    max_length: int = 8192
+    max_prompt_length: int = 4096
 
 
 def main():
-    parser = HfArgumentParser((ScriptArguments, DPOConfig))
-    script_args, dpo_args = parser.parse_args_into_dataclasses()
+    # Use hardcoded arguments instead of command line parsing
+    script_args = ScriptArguments()
+    
+    # Configure DPO training arguments
+    dpo_args = DPOConfig(
+        output_dir=script_args.output_dir,
+        num_train_epochs=3,
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=16,
+        gradient_checkpointing=True,
+        learning_rate=5e-5,
+        lr_scheduler_type="cosine",
+        warmup_ratio=0.1,
+        bf16=True,
+        logging_steps=10,
+        save_strategy="steps",
+        save_steps=500,
+        report_to="none",
+        beta=script_args.beta,
+        max_length=script_args.max_length,
+        max_prompt_length=script_args.max_prompt_length,
+    )
 
     # 1. Load Dataset
     # The trainer expects columns: 'prompt', 'chosen', 'rejected'
@@ -81,7 +89,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         torch_dtype=torch.bfloat16, # Matching your SFT script
-        attn_implementation="flash_attention_2",
+        attn_implementation="eager",
         device_map="auto"
     )
 
@@ -104,12 +112,9 @@ def main():
         model=model,
         ref_model=None, 
         args=dpo_args,
-        train_dataset=dataset["train"],
-        tokenizer=tokenizer,
+        train_dataset=dataset,
+        processing_class=tokenizer,
         peft_config=peft_config,
-        beta=script_args.beta,
-        max_length=script_args.max_length,
-        max_prompt_length=script_args.max_prompt_length,
     )
 
     # 6. Train
