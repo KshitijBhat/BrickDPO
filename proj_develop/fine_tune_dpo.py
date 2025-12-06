@@ -4,12 +4,13 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from datasets import load_dataset
-from peft import LoraConfig
+from peft import LoraConfig, prepare_model_for_kbit_training
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
     HfArgumentParser,
 )
+from transformers import BitsAndBytesConfig
 from trl import DPOConfig, DPOTrainer
 
 # @dataclass
@@ -38,6 +39,12 @@ class ScriptArguments:
 def main():
     # Use hardcoded arguments instead of command line parsing
     script_args = ScriptArguments()
+
+    torch.cuda.empty_cache()
+    import gc
+    gc.collect()
+
+    
     
     # Configure DPO training arguments
     dpo_args = DPOConfig(
@@ -46,6 +53,7 @@ def main():
         per_device_train_batch_size=1,
         gradient_accumulation_steps=16,
         gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={'use_reentrant': False},
         learning_rate=5e-5,
         lr_scheduler_type="cosine",
         warmup_ratio=0.1,
@@ -84,14 +92,23 @@ def main():
     if tokenizer.padding_side is None:
         tokenizer.padding_side = "right"
 
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+    )
+
     # 3. Load Model
     print(f"Loading model from {script_args.model_name_or_path}...")
     model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
-        torch_dtype=torch.bfloat16, # Matching your SFT script
-        attn_implementation="flash_attention_2", # Llama 3 optimization
+        quantization_config=bnb_config, # 4-bit loading, QLoRA compatible
+        attn_implementation="sdpa", # Llama 3 optimization
         device_map="auto"
     )
+
+    model = prepare_model_for_kbit_training(model)
 
     # 4. LoRA Configuration
     peft_config = None
