@@ -19,7 +19,7 @@ class ScriptArguments:
     """
     # Model arguments
     model_name_or_path: str = "AvaLovelace/BrickGPT"
-    dataset_path: str = "/home/kshitij/Documents/Courses/10623/Project/10623-ConditionedBrickGPT/src/brickgpt/dpo_dataset.parquet"
+    dataset_path: str = "datasets/dpo_datasets/combined_dataset/dpo_hf.parquet"
     output_dir: str = "dpo_output"
     
     # LoRA arguments (Matched to your finetune.zsh)
@@ -43,7 +43,7 @@ def main():
     dpo_args = DPOConfig(
         output_dir=script_args.output_dir,
         num_train_epochs=3,
-        per_device_train_batch_size=2,
+        per_device_train_batch_size=1,
         gradient_accumulation_steps=16,
         gradient_checkpointing=True,
         learning_rate=5e-5,
@@ -62,7 +62,7 @@ def main():
     # 1. Load Dataset
     # The trainer expects columns: 'prompt', 'chosen', 'rejected'
     print(f"Loading dataset from {script_args.dataset_path}...")
-    dataset = load_dataset("parquet", data_files={"train": script_args.dataset_path})
+    train_dataset = load_dataset("parquet", data_files=script_args.dataset_path, split="train")
     
     # 2. Load Tokenizer
     # We load this first to handle special tokens before loading the model
@@ -112,7 +112,7 @@ def main():
         model=model,
         ref_model=None, 
         args=dpo_args,
-        train_dataset=dataset,
+        train_dataset=train_dataset,
         processing_class=tokenizer,
         peft_config=peft_config,
     )
