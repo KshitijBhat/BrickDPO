@@ -20,7 +20,7 @@ class ScriptArguments:
     """
     # Model arguments
     model_name_or_path: str = "sft_brickgpt"  # Path to SFT meta-llama/Llama-3.2-1B-Instruct model
-    dataset_path: str = "datasets/dpo_datasets/combined_dataset/dpo_hf.parquet"
+    dataset_path: str = "datasets/dpo_datasets/combined_dataset/dpo_hf.jsonl"
     output_dir: str = "dpo_output"
     
     # LoRA arguments (Matched to your finetune.zsh)
@@ -32,8 +32,8 @@ class ScriptArguments:
 
     # DPO Specifics
     beta: float = 0.1
-    max_length: int = 8192
-    max_prompt_length: int = 4096
+    max_length: int = 2048
+    max_prompt_length: int = 256
 
 
 def main():
@@ -58,6 +58,8 @@ def main():
         lr_scheduler_type="cosine",
         warmup_ratio=0.1,
         bf16=True,
+        optim="paged_adamw_8bit",
+        max_grad_norm=0.3,
         logging_steps=10,
         save_strategy="steps",
         save_steps=500,
@@ -70,7 +72,7 @@ def main():
     # 1. Load Dataset
     # The trainer expects columns: 'prompt', 'chosen', 'rejected'
     print(f"Loading dataset from {script_args.dataset_path}...")
-    train_dataset = load_dataset("parquet", data_files=script_args.dataset_path, split="train")
+    train_dataset = load_dataset("json", data_files=script_args.dataset_path, split="train")
     
     # 2. Load Tokenizer
     # We load this first to handle special tokens before loading the model
