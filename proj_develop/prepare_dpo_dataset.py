@@ -1,28 +1,16 @@
 """
 Script to prepare a DPO (Direct Preference Optimization) dataset in HuggingFace format.
-Fixed to output proper format for TRL DPOTrainer.
+Fixed to output proper JSONL format for TRL DPOTrainer.
 """
 
 import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
-from typing import Dict, List, Any
+import os
 from brickgpt.models import create_instruction
-
-def create_dpo_entry(prompt: List[Dict[str, str]], chosen: List[Dict[str, str]], rejected: List[Dict[str, str]]) -> Dict[str, Any]:
-    """
-    Create a single DPO dataset entry in chat format.
-    Returns plain Python lists (not numpy arrays).
-    """
-    return {
-        "prompt": prompt,  
-        "chosen": chosen,  
-        "rejected": rejected  
-    }
 
 def main():
     input_file = "datasets/dpo_datasets/combined_dataset/dpo_data.parquet"
-    output_file = "datasets/dpo_datasets/combined_dataset/dpo_hf.parquet"
+    # Changed extension to .jsonl
+    output_file = "datasets/dpo_datasets/combined_dataset/dpo_hf.jsonl"
     
     # Load the parquet file
     df = pd.read_parquet(input_file)
@@ -32,7 +20,8 @@ def main():
 
     for index, row in df.iterrows():
         caption = row.get('caption', '')
-        bricks_candidates = row.get('generated_bricks', '[]')
+        bricks_candidates = row.get('generated_bricks', [])
+
 
         # The last entry of the array is the chosen response
         chosen_content = bricks_candidates[-1]
@@ -59,35 +48,38 @@ def main():
                 {"role": "assistant", "content": rejected_content}
             ]
 
-            entry = create_dpo_entry(
-                prompt=prompt_messages,
-                chosen=chosen_messages,
-                rejected=rejected_messages
-            )
+            entry = {
+                "prompt": prompt_messages,
+                "chosen": chosen_messages,
+                "rejected": rejected_messages
+            }
             
             dpo_data.append(entry)
 
     print(f"Created {len(dpo_data)} DPO training pairs")
     
-    # Convert to DataFrame with explicit dtype to avoid numpy array wrapping
+    # Convert to DataFrame
     dataset = pd.DataFrame(dpo_data)
     
-    # Option 1: Save as Parquet with PyArrow (better type handling)
-    table = pa.Table.from_pandas(dataset, preserve_index=False)
-    pq.write_table(table, output_file)
+    # Make sure output directory exists
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+
+    # Save as JSONL (orient='records', lines=True)
+    # force_ascii=False ensures special characters are written as-is, not escaped
+    dataset.to_json(output_file, orient='records', lines=True, force_ascii=False)
     
     print(f"Successfully processed data. Saved {len(dataset)} DPO entries to {output_file}")
     
     # Verify the format
     print("\nVerifying format...")
-    test_df = pd.read_parquet(output_file)
-    print(f"First entry 'prompt' type: {type(test_df['prompt'].iloc[0])}")
-    print(f"First entry 'chosen' type: {type(test_df['chosen'].iloc[0])}")
-    print(f"First entry 'rejected' type: {type(test_df['rejected'].iloc[0])}")
-    print(f"\nSample entry:")
-    print(f"prompt: {test_df['prompt'].iloc[0]}")
-    print(f"chosen: {test_df['chosen'].iloc[0][:100]}...")  # First 100 chars
-    print(f"rejected: {test_df['rejected'].iloc[0][:100]}...")  # First 100 chars
+    try:
+        # Read back with lines=True
+        test_df = pd.read_json(output_file, lines=True)
+        print("Verification successful: File can be read as JSONL.")
+        print(f"Sample entry:\n{test_df.iloc[0]}")
+        print(f"Sample entry dict:\n{test_df.iloc[0].to_dict()}")
+    except Exception as e:
+        print(f"Verification failed: {e}")
 
 if __name__ == "__main__":
     main()
