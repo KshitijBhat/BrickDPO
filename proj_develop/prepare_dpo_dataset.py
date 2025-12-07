@@ -23,15 +23,17 @@ def main():
     parser.add_argument(
         "--input_file",
         type=str,
-        default="datasets/dpo_datasets/combined_dataset/dpo_data.parquet",
-        help="Path to input parquet file"
+        default="datasets/dpo_datasets/combined_test_dataset/dpo_data.parquet",
+        help="Path to input parquet file",
+        required=True
     )
 
     parser.add_argument(
         "--output_file",
         type=str,
-        default="datasets/dpo_datasets/combined_dataset/dpo_hf",
-        help="Path to output JSONL file"
+        default="datasets/dpo_datasets/combined_test_dataset/dpo_hf",
+        help="Path to output JSONL file",
+        required=True
     )
 
     args = parser.parse_args()
