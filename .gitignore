@@ -16,3 +16,6 @@ wandb
 
 proj_develop/batch_outputs/
 proj_develop/sft_brickgpt
+proj_develop/datasets/dpo_datasets/ignore_combined_dataset
+proj_develop/datasets/dpo_datasets/test_*
+proj_develop/datasets/dpo_datasets/train_*

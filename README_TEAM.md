@@ -70,6 +70,13 @@ to active the virtual environment:
 
 ```zsh
 source .venv-eval/bin/activate
+
+# Convert csv to parquet:
+```zsh
+uv run python proj_develop/convert_dpo_csv_to_parquet.py
+```
+
+
 ```
 
 ## Kshitij: How to run the dpo data collection?
