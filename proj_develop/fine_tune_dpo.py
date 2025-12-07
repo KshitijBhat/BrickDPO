@@ -13,6 +13,9 @@ from transformers import (
 from transformers import BitsAndBytesConfig
 from trl import DPOConfig, DPOTrainer
 
+import wandb
+
+
 # @dataclass
 class ScriptArguments:
     """
@@ -40,6 +43,13 @@ def main():
     # Use hardcoded arguments instead of command line parsing
     script_args = ScriptArguments()
 
+
+    wandb.init(
+        project="DPO-BrickGPT",
+        name="brickgpt-dpo-run",
+        config=vars(script_args)
+    )
+
     torch.cuda.empty_cache()
     import gc
     gc.collect()
@@ -61,9 +71,11 @@ def main():
         optim="paged_adamw_8bit",
         max_grad_norm=0.3,
         logging_steps=10,
+        logging_dir=os.path.join(script_args.output_dir, "logs"),
         save_strategy="steps",
         save_steps=500,
-        report_to="none",
+        save_total_limit=3,  # Keep only last 3 checkpoints to save space
+        report_to="wandb",  # Add tensorboard for local logs
         beta=script_args.beta,
         max_length=script_args.max_length,
         max_prompt_length=script_args.max_prompt_length,
