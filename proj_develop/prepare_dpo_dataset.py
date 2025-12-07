@@ -2,29 +2,67 @@
 Script to prepare a DPO (Direct Preference Optimization) dataset in HuggingFace format.
 Fixed to output proper JSONL format for TRL DPOTrainer.
 """
-
+import argparse
 import pandas as pd
 import os
 from brickgpt.models import create_instruction
 
 def main():
-    input_file = "datasets/dpo_datasets/combined_dataset/dpo_data.parquet"
-    # Changed extension to .jsonl
-    output_file = "datasets/dpo_datasets/combined_dataset/dpo_hf.jsonl"
+    # ------------------------------
+    # Add argparse CLI interface
+    # ------------------------------
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--max_seq_len",
+        type=int,
+        default=None,
+        help="Optional maximum sequence length for truncation (default: None)"
+    )
     
-    # Load the parquet file
+    parser.add_argument(
+        "--input_file",
+        type=str,
+        default="datasets/dpo_datasets/combined_dataset/dpo_data.parquet",
+        help="Path to input parquet file"
+    )
+
+    parser.add_argument(
+        "--output_file",
+        type=str,
+        default="datasets/dpo_datasets/combined_dataset/dpo_hf",
+        help="Path to output JSONL file"
+    )
+
+    args = parser.parse_args()
+
+    input_file = args.input_file
+    output_file = args.output_file
+    max_seq_len = args.max_seq_len
+
+    print(f"max_seq_len = {max_seq_len}")
+
+    output_file_suffix = "" if max_seq_len is None else f"_maxlen{max_seq_len}"
+    output_file = f"{output_file}{output_file_suffix}.jsonl"
+
+    # ------------------------------
+    # Start parsing 
+    # ------------------------------
     df = pd.read_parquet(input_file)
     print(f"Loaded {len(df)} rows from {input_file}")
 
     dpo_data = []
 
-    for index, row in df.iterrows():
+    for _, row in df.iterrows():
         caption = row.get('caption', '')
         bricks_candidates = row.get('generated_bricks', [])
 
 
         # The last entry of the array is the chosen response
         chosen_content = bricks_candidates[-1]
+
+        if max_seq_len is not None and len(chosen_content) > max_seq_len:
+            continue
         
         # All the entries df['generated_bricks'][0:-1] are the rejected ones
         rejected_candidates = bricks_candidates[:-1]
