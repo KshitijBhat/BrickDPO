@@ -3,11 +3,24 @@ import json
 import time
 import pandas as pd
 import transformers
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from tqdm import tqdm
 import argparse
 from datetime import datetime
 
 from brickgpt.models import BrickGPT, BrickGPTConfig
+
+
+def load_hf_model_with_subfolder(model_path, subfolder, device):
+    """Load a merged model from HuggingFace with subfolder structure."""
+    tokenizer = AutoTokenizer.from_pretrained(model_path, subfolder=subfolder)
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path,
+        subfolder=subfolder,
+        device_map="auto",
+        torch_dtype="auto"
+    )
+    return tokenizer, model
 
 
 def load_dataset_from_parquet(dataset_path, start_idx=0, max_rows=None):
@@ -64,6 +77,17 @@ def main():
         default='AvaLovelace/BrickGPT',
         help='Model checkpoint for inference'
     )
+    parser.add_argument(
+        '--use_hf',
+        action='store_true',
+        help='Load merged model from HuggingFace with subfolder structure'
+    )
+    parser.add_argument(
+        '--hf_subfolder',
+        type=str,
+        default='merged_dpo_brickgpt',
+        help='Subfolder when using --use_hf (default: merged_dpo_brickgpt)'
+    )
     args = parser.parse_args()
 
     # Setup paths
@@ -88,11 +112,25 @@ def main():
     cfg = BrickGPTConfig(model_name_or_path=args.model_name_or_path)
     brickgpt = BrickGPT(cfg)
 
+    # If using HuggingFace merged model, override the tokenizer and model
+    if args.use_hf:
+        print(f"Loading HuggingFace model from subfolder: {args.hf_subfolder}")
+        tokenizer, model = load_hf_model_with_subfolder(
+            args.model_name_or_path,
+            args.hf_subfolder,
+            brickgpt.device
+        )
+        brickgpt.llm.tokenizer = tokenizer
+        brickgpt.llm.model = model
+
     # Load dataset
     df = load_dataset_from_parquet(dataset_path, start_idx=args.start_idx, max_rows=args.max_rows)
     n_structures = df.shape[0]
 
     print(f"Running evaluation inference on {n_structures} structures")
+    print(f"Model: {cfg.model_name_or_path}")
+    if args.use_hf:
+        print(f"  Loaded from HuggingFace subfolder: {args.hf_subfolder}")
     print(f"Dataset: {dataset_path}")
     print(f"Starting index: {args.start_idx}")
     print(f"Output file: {output_path}")
