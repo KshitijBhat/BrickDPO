@@ -32,6 +32,8 @@ finetuning = [
 
 [project.scripts]
 infer = "brickgpt.infer:main"
+infer_ours = "brickgpt.infer_our_model:main"
+
 prepare_finetuning_dataset = "brickgpt.prepare_finetuning_dataset:main"
 render_bricks = "brickgpt.render_bricks:main"
 batch_infer = "brickgpt.batch_infer:main"
