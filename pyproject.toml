@@ -22,6 +22,7 @@ dependencies = [
     "typing-extensions>=4.9.0",
     "wandb>=0.19.11",
     "bitsandbytes>=0.48.2",
+    "tqdm>=4.0.0",
 ]
 
 [project.optional-dependencies]
@@ -39,6 +40,7 @@ render_bricks = "brickgpt.render_bricks:main"
 batch_infer = "brickgpt.batch_infer:main"
 batch_infer_incremental = "brickgpt.batch_infer_incremental:main"
 eval_baseline = "brickgpt.eval_baseline:main"
+eval_brickgpt = "brickgpt.eval_BrickGPT:main"
 
 [build-system]
 requires = ["hatchling"]
