@@ -113,15 +113,14 @@ def main():
         category_id = str(row.get('category_id', idx))
         prompts = row[args.caption_column]
 
-        if not isinstance(prompts, list):
-            prompts = [prompts]#.tolist() # is an array!
+        prompts_list = ast.literal_eval(prompts) if isinstance(prompts, str) else prompts
 
-        for prompt_idx, prompt in enumerate(prompts):
+        for prompt_idx, prompt in enumerate(prompts_list):
             # Determine caption type: first caption is "short", second is "long"
             caption_type = "short" if prompt_idx == 0 else "long"
 
             start_time = time.time()
-            output = brickgpt(str(prompt))
+            output = brickgpt(prompt)
             end_time = time.time()
             inference_time = end_time - start_time
 
