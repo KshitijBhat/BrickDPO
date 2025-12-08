@@ -25,11 +25,11 @@ def prepare_output_paths(model_version: str, filename: str):
     # -------------------------------
 
     if model_version == '1':
-        raise ValueError("model not trained yet")
         model_name = "kshitij-hf/brick-dpo-base-2048"
         base_parent_dir = "outputs_2048"
 
     elif model_version == '2':
+        raise ValueError("model not trained yet")
         model_name = "kshitij-hf/brick-dpo-base-2500"
         base_parent_dir = "outputs_2500"
 
@@ -96,7 +96,7 @@ def main():
             break
 
         # Model version
-        model_version = input('Options: 1 = 2048 model, 2 = 2500 model, 3 = 2500 + partial. Enter 1, 2, or 3')
+        model_version = input('Options: 1 = 2048 model, 2 = 2500 model, 3 = 2500 + partial. Enter 1, 2, or 3: ')
         filename = input('Enter a filename to save the output image (default=output.png): ')
         model_path, txt_filename, ldr_filename, img_filename, model_name = prepare_output_paths(model_version, filename)
         brickgpt.model_name_or_path = model_path
