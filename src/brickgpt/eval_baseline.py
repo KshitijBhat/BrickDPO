@@ -67,7 +67,8 @@ def main():
 
     # Generate output filename
     if args.output_name is None:
-        dataset_basename = os.path.splitext(args.dataset)[0]
+        # Get just the filename without directory path or extension
+        dataset_basename = os.path.splitext(os.path.basename(args.dataset))[0]
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         output_name = f'eval_baseline_{dataset_basename}_{timestamp}'
     else:
@@ -106,9 +107,9 @@ def main():
         pbar = tqdm(total=total_prompts, desc="Processing prompts")
 
         for idx, row in df.iterrows():
-            structure_id = int(row.get('structure_id', idx))
-            object_id = int(row.get('object_id', idx))
-            category_id = int(row.get('category_id', idx))
+            # structure_id = int(row.get('structure_id', idx))
+            # object_id = int(row.get('object_id', idx))
+            # category_id = int(row.get('category_id', idx))
             prompts = row[args.caption_column]
 
             if not isinstance(prompts, list):
@@ -125,9 +126,9 @@ def main():
 
                 result = {
                     'model_name_or_path': cfg.model_name_or_path,
-                    'structure_id': structure_id,
-                    'object_id': object_id,
-                    'category_id': category_id,
+                    # 'structure_id': structure_id,
+                    # 'object_id': object_id,
+                    # 'category_id': category_id,
                     'prompt': str(prompt),
                     'prompt_idx': prompt_idx,
                     'final_sequence': final_bricks.to_txt(),
