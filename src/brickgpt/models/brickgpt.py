@@ -13,7 +13,10 @@ from transformers.generation.logits_process import PrefixConstrainedLogitsProces
 
 from brickgpt.data import max_brick_dimension, BrickStructure, Brick
 from .llm import LLM
+import logging
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 @dataclass
 class BrickGPTConfig:
@@ -166,7 +169,9 @@ class BrickGPT:
         generated_bricks.append(bricks.to_txt())
         stable_partial_structures.append(bricks.to_txt())
         average_stability_scores.append(self._stability_scores(bricks).mean())
-
+        # logger.info(f'Generated bricks: {generated_bricks}')
+        # logger.info(f'Stable partial structures: {stable_partial_structures}')
+        logger.info(f'Average stability scores: {average_stability_scores}')
         # record DPO data point
         dpo_responses_dict = {
             'caption': caption,

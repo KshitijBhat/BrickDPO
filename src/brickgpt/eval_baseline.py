@@ -113,7 +113,7 @@ def main():
             prompts = row[args.caption_column]
 
             if not isinstance(prompts, list):
-                prompts = [prompts]
+                prompts = prompts.tolist() # is an array!
 
             for prompt_idx, prompt in enumerate(prompts):
                 start_time = time.time()
