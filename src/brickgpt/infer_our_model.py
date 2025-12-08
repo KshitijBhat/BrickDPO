@@ -7,6 +7,82 @@ from transformers import HfArgumentParser
 from brickgpt.models import BrickGPT, BrickGPTConfig
 from brickgpt.render_bricks import render_bricks
 
+import os
+
+def prepare_output_paths(model_version: str, filename: str):
+    """
+    Given a model version (1, 2, or 3) and a filename provided by the user,
+    return the txt, ldr, and png output paths within the correct model-specific directory.
+
+    model_version:
+        '1' → 2048 model          → outputs_2048/
+        '2' → 2500 model          → outputs_2500/
+        '3' → 2500 partial model  → outputs_2500_partial/
+    """
+
+    # -------------------------------
+    # 1. Model version → model path + base output directory
+    # -------------------------------
+
+    if model_version == '1':
+        raise ValueError("model not trained yet")
+        model_name = "kshitij-hf/brick-dpo-base-2048"
+        base_parent_dir = "outputs_2048"
+
+    elif model_version == '2':
+        model_name = "kshitij-hf/brick-dpo-base-2500"
+        base_parent_dir = "outputs_2500"
+
+    elif model_version == '3':
+        model_name = "kshitij-hf/brickgpt_partial"
+        base_parent_dir = "outputs_2500_partial"
+
+    else:
+        raise ValueError("model_version must be one of: '1', '2', '3'")
+
+    # -------------------------------
+    # 2. Build filename (strip extension)
+    # -------------------------------
+
+    if not filename or filename.strip() == "":
+        filename = "output.png"
+
+    filename = filename.strip()
+    base_name = os.path.splitext(filename)[0]  # remove .png
+
+    # model suffix
+    if model_version == '1':
+        suffix = "_model2048"
+    elif model_version == '2':
+        suffix = "_model2500"
+    else:
+        suffix = "_model2500_partial"
+
+    base_name = base_name + suffix
+
+    # -------------------------------
+    # 3. Construct full paths
+    # -------------------------------
+
+    os.makedirs(base_parent_dir, exist_ok=True)
+
+    txt_filename = os.path.abspath(os.path.join(base_parent_dir, base_name + ".txt"))
+    ldr_filename = os.path.abspath(os.path.join(base_parent_dir, base_name + ".ldr"))
+    img_filename = os.path.abspath(os.path.join(base_parent_dir, base_name + ".png"))
+
+    # -------------------------------
+    # 4. Return model path + output paths
+    # -------------------------------
+
+    model_name = base_parent_dir[8:]
+    return {
+        "model_name_or_path": model_name,
+        "txt_path": base_parent_dir + txt_filename,
+        "ldr_path": base_parent_dir + ldr_filename,
+        "img_path": base_parent_dir + img_filename,
+        "model_name": model_name,
+    }
+
 
 def main():
     parser = HfArgumentParser(BrickGPTConfig)
@@ -21,34 +97,17 @@ def main():
 
         # Model version
         model_version = input('Options: 1 = 2048 model, 2 = 2500 model, 3 = 2500 + partial. Enter 1, 2, or 3')
-        if model_version == '1':
-            brickgpt.model_name_or_path = "kshitij-hf/brickgpt-dpo-2048"
-        elif model_version == '2':
-            raise ValueError("model not trained yet")
-        elif model_version == '3':
-            brickgpt.model_name_or_path = "kshitij-hf/brickgpt_partial"
-        else:
-            print("Invalid option. Using default model (partial).")
-        
-        # Take user input
         filename = input('Enter a filename to save the output image (default=output.png): ')
-        output_dir = os.path.dirname(filename)
-        if output_dir:
-            os.makedirs(output_dir, exist_ok=True)
-        base_name = os.path.splitext(filename)[0] if filename else 'output'
-        model_suffix = f"_model2048" if model_version == '1' else f"_model2500" if model_version == '2' else "_model2500_partial" 
-        base_name += model_suffix
+        model_path, txt_filename, ldr_filename, img_filename, model_name = prepare_output_paths(model_version, filename)
+        brickgpt.model_name_or_path = model_path
 
-        txt_filename = os.path.abspath(base_name + '.txt')
-        ldr_filename = os.path.abspath(base_name + '.ldr')
-        img_filename = os.path.abspath(base_name + '.png')
-
+        # Seed
         seed = input('Enter a generation seed (default=42): ')
         seed = int(seed) if seed else 42
         transformers.set_seed(seed)
 
         # Generate bricks
-        print('Generating...')
+        print(f'Generating with model version {model_name}...')
         start_time = time.time()
         output = brickgpt(prompt)
         end_time = time.time()
