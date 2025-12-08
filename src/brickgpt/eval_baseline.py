@@ -105,56 +105,46 @@ def main():
         # Create progress bar for total prompts
         pbar = tqdm(total=total_prompts, desc="Processing prompts")
 
-        # Process each row (same loop structure as batch_infer.py)
         for idx, row in df.iterrows():
-            structure_id = row.get('structure_id', idx)
-            object_id = row.get('object_id', idx)
-            category_id = row.get('category_id', idx)
+            structure_id = int(row.get('structure_id', idx))
+            object_id = int(row.get('object_id', idx))
+            category_id = int(row.get('category_id', idx))
             prompts = row[args.caption_column]
 
-            # Handle both list and single prompt cases
             if not isinstance(prompts, list):
                 prompts = [prompts]
 
-            # Run inference for each prompt
             for prompt_idx, prompt in enumerate(prompts):
-                # Time the inference
                 start_time = time.time()
-                output = brickgpt(prompt)
+                output = brickgpt(str(prompt))
                 end_time = time.time()
                 inference_time = end_time - start_time
 
-                # Extract data from output
                 final_bricks = output['bricks']
-                n_regenerations = output['n_regenerations']
-                rejection_reasons = dict(output['rejection_reasons'])  # Convert Counter to dict
+                rejection_reasons = dict(output['rejection_reasons'])
 
-                # Prepare result record (no individual stability_scores, only mean)
                 result = {
                     'model_name_or_path': cfg.model_name_or_path,
                     'structure_id': structure_id,
                     'object_id': object_id,
                     'category_id': category_id,
-                    'prompt': prompt,
+                    'prompt': str(prompt),
                     'prompt_idx': prompt_idx,
                     'final_sequence': final_bricks.to_txt(),
                     'n_bricks': len(final_bricks),
-                    'n_regenerations': n_regenerations,
+                    'n_regenerations': int(output['n_regenerations']),
                     'rejection_reasons': rejection_reasons,
                     'total_rejections': sum(rejection_reasons.values()),
                     'inference_time_seconds': inference_time,
                     'mean_stability_score': float(brickgpt._stability_scores(final_bricks).mean()),
-                    'is_stable': brickgpt._is_stable(final_bricks),
+                    'is_stable': bool(brickgpt._is_stable(final_bricks)),
                 }
 
-                # Write to JSONL file (one JSON object per line)
                 f.write(json.dumps(result) + '\n')
-                f.flush()  # Ensure data is written immediately
+                f.flush()
 
                 total_inferences += 1
                 total_time += inference_time
-
-                # Update progress bar
                 pbar.update(1)
 
         # Close progress bar
