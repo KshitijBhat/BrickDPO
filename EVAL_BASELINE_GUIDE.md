@@ -5,17 +5,26 @@ Simple evaluation script for the baseline BrickGPT model. Loads the model exactl
 ## Quick Start
 
 ```bash
-uv run eval_baseline --dataset your_dataset.parquet
+uv run eval_baseline --dataset test_sets/test_set_maxlen_2048_topk_100.parquet
 ```
 
 ## Usage Examples
 
-### Basic Evaluation
+### Basic Evaluation (100 structures × 5 prompts = 500 total)
 
 ```bash
 uv run eval_baseline \
-    --dataset test_set.parquet \
+    --dataset test_sets/test_set_maxlen_2048_topk_100.parquet \
     --output_name baseline_test
+```
+
+### Quick Test (First 5 structures = 25 prompts)
+
+```bash
+uv run eval_baseline \
+    --dataset test_sets/test_set_maxlen_2048_topk_100.parquet \
+    --max_rows 5 \
+    --output_name quick_test
 ```
 
 ### Evaluate with Specific Settings
@@ -50,7 +59,7 @@ uv run eval_baseline \
 
 Results saved as JSONL in `proj_develop/inference/`.
 
-Each line:
+Each line (one per prompt):
 
 ```json
 {
@@ -66,11 +75,12 @@ Each line:
   "rejection_reasons": {"collision": 12, "out_of_bounds": 5},
   "total_rejections": 18,
   "inference_time_seconds": 12.34,
-  "stability_scores": [0.0, 0.0, 0.1, ...],
   "mean_stability_score": 0.023,
   "is_stable": true
 }
 ```
+
+**Note**: Individual brick stability scores are NOT saved (only mean) to reduce file size.
 
 ## Analysis
 
@@ -89,9 +99,26 @@ df = load_eval_results('proj_develop/inference/eval_baseline_*.jsonl')
 print_eval_summary(df)
 ```
 
+## Performance Notes
+
+**For test_set_maxlen_2048_topk_100.parquet (100 structures × 5 prompts = 500 total):**
+- **Per prompt**: ~5-15 seconds (2048 tokens ≈ 200 bricks)
+- **Full evaluation**: ~40-125 minutes (0.7-2 hours)
+- **Quick test** (5 structures): ~2-6 minutes
+
+**Main bottlenecks:**
+1. Long sequence generation (2048 tokens = ~200 bricks)
+2. Rejection sampling (max 500 attempts per brick)
+3. Physics-informed rollback (up to 100 regenerations)
+4. Gurobi stability solver
+
+See `PERFORMANCE_NOTES.md` for optimization options.
+
 ## Notes
 
 - Loads model exactly like `batch_infer.py` (no custom loading)
 - Only stores final results (no DPO intermediate data)
+- Progress bar shows total prompts (not structures)
 - Results written incrementally - can monitor in real-time
+- Dataset loading is NOT a bottleneck (only 100 rows)
 - All paths relative to project root

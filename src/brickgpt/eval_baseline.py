@@ -86,7 +86,10 @@ def main():
     df = load_dataset_from_parquet(dataset_path, start_idx=args.start_idx, max_rows=args.max_rows)
     n_structures = df.shape[0]
 
-    print(f"Running evaluation inference on {n_structures} structures")
+    # Count total prompts across all rows
+    total_prompts = df[args.caption_column].apply(lambda x: len(x) if isinstance(x, (list, tuple)) else 1).sum()
+
+    print(f"Running evaluation inference on {n_structures} structures ({total_prompts} total prompts)")
     print(f"Model: {cfg.model_name_or_path}")
     print(f"Dataset: {dataset_path}")
     print(f"Starting index: {args.start_idx}")
@@ -99,8 +102,11 @@ def main():
 
     # Open output file for writing
     with open(output_path, 'w') as f:
+        # Create progress bar for total prompts
+        pbar = tqdm(total=total_prompts, desc="Processing prompts")
+
         # Process each row (same loop structure as batch_infer.py)
-        for idx, row in tqdm(df.iterrows(), total=n_structures, desc="Processing structures"):
+        for idx, row in df.iterrows():
             structure_id = row.get('structure_id', idx)
             object_id = row.get('object_id', idx)
             category_id = row.get('category_id', idx)
@@ -123,10 +129,7 @@ def main():
                 n_regenerations = output['n_regenerations']
                 rejection_reasons = dict(output['rejection_reasons'])  # Convert Counter to dict
 
-                # Get stability scores for all blocks
-                stability_scores = brickgpt._stability_scores(final_bricks).tolist()
-
-                # Prepare result record
+                # Prepare result record (no individual stability_scores, only mean)
                 result = {
                     'model_name_or_path': cfg.model_name_or_path,
                     'structure_id': structure_id,
@@ -140,7 +143,6 @@ def main():
                     'rejection_reasons': rejection_reasons,
                     'total_rejections': sum(rejection_reasons.values()),
                     'inference_time_seconds': inference_time,
-                    'stability_scores': stability_scores,
                     'mean_stability_score': float(brickgpt._stability_scores(final_bricks).mean()),
                     'is_stable': brickgpt._is_stable(final_bricks),
                 }
@@ -151,6 +153,12 @@ def main():
 
                 total_inferences += 1
                 total_time += inference_time
+
+                # Update progress bar
+                pbar.update(1)
+
+        # Close progress bar
+        pbar.close()
 
     # Print summary statistics
     print("-" * 80)
