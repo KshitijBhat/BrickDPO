@@ -3,24 +3,11 @@ import json
 import time
 import pandas as pd
 import transformers
-from transformers import AutoModelForCausalLM, AutoTokenizer
 from tqdm import tqdm
 import argparse
 from datetime import datetime
 
 from brickgpt.models import BrickGPT, BrickGPTConfig
-
-
-def load_hf_model_with_subfolder(model_path, subfolder, device):
-    """Load a merged model from HuggingFace with subfolder structure."""
-    tokenizer = AutoTokenizer.from_pretrained(model_path, subfolder=subfolder)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        subfolder=subfolder,
-        device_map="auto",
-        torch_dtype="auto"
-    )
-    return tokenizer, model
 
 
 def load_dataset_from_parquet(dataset_path, start_idx=0, max_rows=None):
@@ -34,7 +21,7 @@ def load_dataset_from_parquet(dataset_path, start_idx=0, max_rows=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Fast evaluation inference script for BrickGPT')
+    parser = argparse.ArgumentParser(description='Fast evaluation inference script for baseline BrickGPT')
     parser.add_argument(
         '--dataset',
         type=str,
@@ -71,23 +58,6 @@ def main():
         default=None,
         help='Limit the number of rows processed'
     )
-    parser.add_argument(
-        '--model_name_or_path',
-        type=str,
-        default='AvaLovelace/BrickGPT',
-        help='Model checkpoint for inference'
-    )
-    parser.add_argument(
-        '--use_hf',
-        action='store_true',
-        help='Load merged model from HuggingFace with subfolder structure'
-    )
-    parser.add_argument(
-        '--hf_subfolder',
-        type=str,
-        default='merged_dpo_brickgpt',
-        help='Subfolder when using --use_hf (default: merged_dpo_brickgpt)'
-    )
     args = parser.parse_args()
 
     # Setup paths
@@ -99,29 +69,18 @@ def main():
     if args.output_name is None:
         dataset_basename = os.path.splitext(args.dataset)[0]
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_name = f'eval_{dataset_basename}_{timestamp}'
+        output_name = f'eval_baseline_{dataset_basename}_{timestamp}'
     else:
         output_name = args.output_name
 
     output_path = os.path.join(output_dir, f'{output_name}.jsonl')
 
-    # Set seed
+    # Set seed (same as batch_infer.py)
     transformers.set_seed(args.seed)
 
-    # Initialize BrickGPT
-    cfg = BrickGPTConfig(model_name_or_path=args.model_name_or_path)
+    # Prepare config and BrickGPT object (same as batch_infer.py)
+    cfg = BrickGPTConfig()
     brickgpt = BrickGPT(cfg)
-
-    # If using HuggingFace merged model, override the tokenizer and model
-    if args.use_hf:
-        print(f"Loading HuggingFace model from subfolder: {args.hf_subfolder}")
-        tokenizer, model = load_hf_model_with_subfolder(
-            args.model_name_or_path,
-            args.hf_subfolder,
-            brickgpt.device
-        )
-        brickgpt.llm.tokenizer = tokenizer
-        brickgpt.llm.model = model
 
     # Load dataset
     df = load_dataset_from_parquet(dataset_path, start_idx=args.start_idx, max_rows=args.max_rows)
@@ -129,8 +88,6 @@ def main():
 
     print(f"Running evaluation inference on {n_structures} structures")
     print(f"Model: {cfg.model_name_or_path}")
-    if args.use_hf:
-        print(f"  Loaded from HuggingFace subfolder: {args.hf_subfolder}")
     print(f"Dataset: {dataset_path}")
     print(f"Starting index: {args.start_idx}")
     print(f"Output file: {output_path}")
@@ -142,7 +99,7 @@ def main():
 
     # Open output file for writing
     with open(output_path, 'w') as f:
-        # Process each row
+        # Process each row (same loop structure as batch_infer.py)
         for idx, row in tqdm(df.iterrows(), total=n_structures, desc="Processing structures"):
             structure_id = row.get('structure_id', idx)
             object_id = row.get('object_id', idx)
@@ -171,6 +128,7 @@ def main():
 
                 # Prepare result record
                 result = {
+                    'model_name_or_path': cfg.model_name_or_path,
                     'structure_id': structure_id,
                     'object_id': object_id,
                     'category_id': category_id,
