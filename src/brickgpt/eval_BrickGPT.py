@@ -114,7 +114,7 @@ def main():
         prompts = row[args.caption_column]
 
         if not isinstance(prompts, list):
-            prompts = prompts.tolist() # is an array!
+            prompts = [prompts]#.tolist() # is an array!
 
         for prompt_idx, prompt in enumerate(prompts):
             # Determine caption type: first caption is "short", second is "long"
