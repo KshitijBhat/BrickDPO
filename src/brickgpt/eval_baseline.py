@@ -123,6 +123,7 @@ def main():
 
                 final_bricks = output['bricks']
                 rejection_reasons = dict(output['rejection_reasons'])
+                stability_scores = brickgpt._stability_scores(final_bricks)
 
                 result = {
                     'model_name_or_path': cfg.model_name_or_path,
@@ -137,7 +138,8 @@ def main():
                     'rejection_reasons': rejection_reasons,
                     'total_rejections': sum(rejection_reasons.values()),
                     'inference_time_seconds': inference_time,
-                    'mean_stability_score': float(brickgpt._stability_scores(final_bricks).mean()),
+                    'mean_stability_score': float(stability_scores.mean()),
+                    'min_stability_score': float(stability_scores.min()),
                     'is_stable': bool(brickgpt._is_stable(final_bricks)),
                 }
 

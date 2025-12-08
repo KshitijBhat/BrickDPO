@@ -90,7 +90,10 @@ def analyze_stats(jsonl_path, output_dir=None):
     
     # ========== Regeneration Stats ==========
     print("\n========== Regeneration Stats ==========")
-    print(regenerations.describe())
+    print(f"Mean regenerations: {regenerations.mean():.2f}")
+    print(f"Std regenerations: {regenerations.std():.2f}")
+    print(f"Regeneration distribution:")
+    print(regenerations.value_counts().sort_index())
     try:
         plt.figure(figsize=(10, 6))
         regenerations.plot.hist(bins=15, alpha=0.7)
@@ -105,35 +108,46 @@ def analyze_stats(jsonl_path, output_dir=None):
         print(f"Saved regenerations histogram to {output_path}")
     except Exception as e:
         print(f"Could not plot regenerations: {e}")
-    
-    # ========== Additional Stats ==========
-    print("\n========== Additional Statistics ==========")
+
+    # ========== Stability Stats ==========
+    print("\n========== Stability Stats ==========")
     if 'mean_stability_score' in df.columns:
-        print(f"Mean Stability Score: {df['mean_stability_score'].mean():.6f}")
-        print(f"Std Stability Score: {df['mean_stability_score'].std():.6f}")
-    
+        print(f"Mean brick stability (across all structures): {df['mean_stability_score'].mean():.6f}")
+        print(f"Std brick stability: {df['mean_stability_score'].std():.6f}")
+
+    if 'min_stability_score' in df.columns:
+        print(f"\nMean of lowest brick stability (across all structures): {df['min_stability_score'].mean():.6f}")
+        print(f"Std of lowest brick stability: {df['min_stability_score'].std():.6f}")
+        print(f"Overall lowest brick stability: {df['min_stability_score'].min():.6f}")
+
     if 'is_stable' in df.columns:
         stable_count = df['is_stable'].sum()
         total_count = len(df)
-        print(f"Stable structures: {stable_count}/{total_count} ({100*stable_count/total_count:.2f}%)")
-    
+        print(f"\nStable structures: {stable_count}/{total_count} ({100*stable_count/total_count:.2f}%)")
+
+    # ========== Generation Stats ==========
+    print("\n========== Generation Stats ==========")
     if 'n_bricks' in df.columns:
-        print(f"\nAverage number of bricks: {df['n_bricks'].mean():.2f}")
+        print(f"Mean number of bricks: {df['n_bricks'].mean():.2f}")
         print(f"Std number of bricks: {df['n_bricks'].std():.2f}")
-    
+
     if 'inference_time_seconds' in df.columns:
-        print(f"\nAverage inference time: {df['inference_time_seconds'].mean():.2f}s")
-        print(f"Total inference time: {df['inference_time_seconds'].sum():.2f}s")
+        print(f"\nMean generation time: {df['inference_time_seconds'].mean():.2f}s")
+        print(f"Std generation time: {df['inference_time_seconds'].std():.2f}s")
+        print(f"Total generation time: {df['inference_time_seconds'].sum():.2f}s")
     
     print('\n========== Done ==========\n')
 
 
 if __name__ == '__main__':
     import argparse
-    parser = argparse.ArgumentParser(description='Analyze evaluation statistics from JSONL file')
-    parser.add_argument('--jsonl_path', type=str, help='Path to JSONL file containing evaluation results')
-    parser.add_argument('--output_dir', type=str, default=None, 
+    parser = argparse.ArgumentParser(
+        description='Analyze evaluation statistics from JSONL file',
+        usage='python eval_stats.py <jsonl_path> [--output_dir OUTPUT_DIR]'
+    )
+    parser.add_argument('jsonl_path', type=str, help='Path to JSONL file containing evaluation results')
+    parser.add_argument('--output_dir', type=str, default=None,
                        help='Directory to save outputs (defaults to same directory as input file)')
     args = parser.parse_args()
-    
+
     analyze_stats(args.jsonl_path, args.output_dir)
