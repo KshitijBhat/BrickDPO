@@ -1,0 +1,40 @@
+================================================================================
+Statistics for: Mixed Dataset (All)
+================================================================================
+Number of samples: 50
+
+========== Structure Regeneration Stats ==========
+Mean structure regenerations: 1.94
+
+========== Stability Stats ==========
+Mean stability score: 0.000089
+Saved total rejections by structure chart to /home/vader/Music/ckpts/10623-ConditionedBrickGPT/src/brickgpt/dpo_base_2048_eval/total_rejections_by_structure_mixed_dataset.png
+Saved structure regeneration frequency histogram to /home/vader/Music/ckpts/10623-ConditionedBrickGPT/src/brickgpt/dpo_base_2048_eval/structure_regeneration_frequency_mixed_dataset.png
+
+================================================================================
+Statistics for: Short Prompts
+================================================================================
+Number of samples: 25
+
+========== Structure Regeneration Stats ==========
+Mean structure regenerations: 2.12
+
+========== Stability Stats ==========
+Mean stability score: 0.000049
+Saved total rejections by structure chart to /home/vader/Music/ckpts/10623-ConditionedBrickGPT/src/brickgpt/dpo_base_2048_eval/total_rejections_by_structure_short_dataset.png
+Saved structure regeneration frequency histogram to /home/vader/Music/ckpts/10623-ConditionedBrickGPT/src/brickgpt/dpo_base_2048_eval/structure_regeneration_frequency_short_dataset.png
+
+================================================================================
+Statistics for: Long Prompts
+================================================================================
+Number of samples: 25
+
+========== Structure Regeneration Stats ==========
+Mean structure regenerations: 1.76
+
+========== Stability Stats ==========
+Mean stability score: 0.000129
+Saved total rejections by structure chart to /home/vader/Music/ckpts/10623-ConditionedBrickGPT/src/brickgpt/dpo_base_2048_eval/total_rejections_by_structure_long_dataset.png
+Saved structure regeneration frequency histogram to /home/vader/Music/ckpts/10623-ConditionedBrickGPT/src/brickgpt/dpo_base_2048_eval/structure_regeneration_frequency_long_dataset.png
+
+========== Done ==========
