@@ -36,7 +36,7 @@ def print_stats_for_subset(df, subset_name="All"):
 
 def plot_regenerations_by_brick_bins(df, suffix, output_dir):
     """
-    Plot histogram of regenerations for different brick count bins.
+    Plot bar chart of total regenerations for different brick count bins.
 
     Args:
         df: DataFrame containing the evaluation results
@@ -51,56 +51,79 @@ def plot_regenerations_by_brick_bins(df, suffix, output_dir):
     bins = [(0, 50), (51, 100), (101, 150), (151, 200), (201, float('inf'))]
     bin_labels = ['0-50', '51-100', '101-150', '151-200', '201+']
 
-    # Create figure
-    fig, axes = plt.subplots(2, 3, figsize=(18, 10))
-    axes = axes.flatten()
-
-    # Plot histogram for each bin
-    for idx, ((min_bricks, max_bricks), label) in enumerate(zip(bins, bin_labels)):
+    # Calculate total regenerations for each bin
+    total_regenerations = []
+    for (min_bricks, max_bricks), label in zip(bins, bin_labels):
         # Filter data for this brick bin
         if max_bricks == float('inf'):
             bin_df = df[df['n_bricks'] >= min_bricks]
         else:
             bin_df = df[(df['n_bricks'] >= min_bricks) & (df['n_bricks'] <= max_bricks)]
 
-        # Plot histogram
-        ax = axes[idx]
-        if len(bin_df) > 0:
-            regenerations = bin_df['n_regenerations']
-            max_regen = int(regenerations.max())
-            min_regen = int(regenerations.min())
+        # Sum total regenerations in this bin
+        total_regen = bin_df['n_regenerations'].sum() if len(bin_df) > 0 else 0
+        total_regenerations.append(total_regen)
 
-            if max_regen > min_regen:
-                ax.hist(regenerations, bins=range(min_regen, max_regen + 2),
-                       alpha=0.7, edgecolor='black')
-            else:
-                ax.hist(regenerations, bins=10, alpha=0.7, edgecolor='black')
+    # Create bar chart
+    plt.figure(figsize=(10, 6))
+    bars = plt.bar(bin_labels, total_regenerations, alpha=0.7, edgecolor='black')
 
-            ax.set_title(f'{label} bricks (n={len(bin_df)})')
-            ax.set_xlabel('Number of Regenerations')
-            ax.set_ylabel('Frequency')
-            ax.grid(True, linestyle='--', alpha=0.3)
+    # Add value labels on top of bars
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height,
+                f'{int(height)}',
+                ha='center', va='bottom', fontsize=10)
 
-            # Add mean line
-            mean_regen = regenerations.mean()
-            ax.axvline(mean_regen, color='red', linestyle='--', linewidth=2,
-                      label=f'Mean: {mean_regen:.2f}')
-            ax.legend()
-        else:
-            ax.text(0.5, 0.5, 'No data', ha='center', va='center', transform=ax.transAxes)
-            ax.set_title(f'{label} bricks (n=0)')
-
-    # Remove extra subplot
-    fig.delaxes(axes[5])
-
-    plt.suptitle(f'Regenerations by Brick Count Bins ({suffix.replace("_", " ").title()})',
-                 fontsize=16, y=1.00)
+    plt.title(f'Total Regenerations by Structure Length ({suffix.replace("_", " ").title()})', fontsize=14)
+    plt.xlabel('Structure Length (Number of Bricks)', fontsize=12)
+    plt.ylabel('Total Number of Regenerations', fontsize=12)
+    plt.grid(True, linestyle='--', alpha=0.3, axis='y')
     plt.tight_layout()
 
     output_path = os.path.join(output_dir, f'regenerations_by_brick_bins_{suffix}.png')
     plt.savefig(output_path, bbox_inches='tight')
     plt.close()
-    print(f"Saved regenerations by brick bins histogram to {output_path}")
+    print(f"Saved regenerations by brick bins chart to {output_path}")
+
+
+def plot_rejection_frequency(df, suffix, output_dir):
+    """
+    Plot histogram of rejection frequency.
+
+    Args:
+        df: DataFrame containing the evaluation results
+        suffix: Suffix for the output filename (e.g., 'mixed_dataset', 'short_dataset', 'long_dataset')
+        output_dir: Directory to save the plot
+    """
+    if 'total_rejections' not in df.columns:
+        print(f"Missing total_rejections column for rejection frequency histogram")
+        return
+
+    plt.figure(figsize=(10, 6))
+
+    rejections = df['total_rejections']
+    max_rej = int(rejections.max())
+    min_rej = int(rejections.min())
+
+    # Create histogram
+    if max_rej > min_rej:
+        bins = range(min_rej, max_rej + 2)
+    else:
+        bins = 20
+
+    plt.hist(rejections, bins=bins, alpha=0.7, edgecolor='black')
+
+    plt.title(f'Rejection Frequency ({suffix.replace("_", " ").title()})', fontsize=14)
+    plt.xlabel('Number of Rejections', fontsize=12)
+    plt.ylabel('Frequency', fontsize=12)
+    plt.grid(True, linestyle='--', alpha=0.3)
+    plt.tight_layout()
+
+    output_path = os.path.join(output_dir, f'rejection_frequency_{suffix}.png')
+    plt.savefig(output_path, bbox_inches='tight')
+    plt.close()
+    print(f"Saved rejection frequency histogram to {output_path}")
 
 
 def analyze_stats(input_path, output_dir=None):
@@ -128,21 +151,25 @@ def analyze_stats(input_path, output_dir=None):
         # Analyze overall statistics (mixed dataset)
         print_stats_for_subset(df, "Mixed Dataset (All)")
         plot_regenerations_by_brick_bins(df, "mixed_dataset", output_dir)
+        plot_rejection_frequency(df, "mixed_dataset", output_dir)
 
         # Analyze statistics per caption type
         if 'short' in df['caption_type'].values:
             df_short = df[df['caption_type'] == 'short']
             print_stats_for_subset(df_short, "Short Prompts")
             plot_regenerations_by_brick_bins(df_short, "short_dataset", output_dir)
+            plot_rejection_frequency(df_short, "short_dataset", output_dir)
 
         if 'long' in df['caption_type'].values:
             df_long = df[df['caption_type'] == 'long']
             print_stats_for_subset(df_long, "Long Prompts")
             plot_regenerations_by_brick_bins(df_long, "long_dataset", output_dir)
+            plot_rejection_frequency(df_long, "long_dataset", output_dir)
     else:
         # No caption types - treat all as mixed dataset
         print_stats_for_subset(df, "Mixed Dataset")
         plot_regenerations_by_brick_bins(df, "mixed_dataset", output_dir)
+        plot_rejection_frequency(df, "mixed_dataset", output_dir)
 
     print('\n========== Done ==========\n')
 
