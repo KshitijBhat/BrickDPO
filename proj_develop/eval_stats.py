@@ -1,5 +1,6 @@
 import os
 import json
+import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend
@@ -29,30 +30,34 @@ def print_stats_for_subset(df, subset_name="All"):
     print("\n========== Stability Stats ==========")
     if 'mean_stability_score' in df.columns:
         print(f"Mean stability score: {df['mean_stability_score'].mean():.6f}")
+        print(f"Max stability score: {df['mean_stability_score'].max():.6f}")
+        print(f"Min stability score: {df['mean_stability_score'].min():.6f}")
 
     if 'max_stability_score' in df.columns:
         print(f"Mean of maximum stability scores: {df['max_stability_score'].mean():.6f}")
+        print(f"Max of maximum stability scores: {df['max_stability_score'].max():.6f}")
 
 
 def plot_total_rejections_by_structure(df, suffix, output_dir):
     """
-    Plot bar chart of total rejections by structure length bins.
+    Plot mean number of regenerations by structure length bins.
 
     Args:
         df: DataFrame containing the evaluation results
         suffix: Suffix for the output filename (e.g., 'mixed_dataset', 'short_dataset', 'long_dataset')
         output_dir: Directory to save the plot
     """
-    if 'n_bricks' not in df.columns or 'total_rejections' not in df.columns:
-        print(f"Missing required columns for total rejections by structure chart")
+    if 'n_bricks' not in df.columns or 'n_regenerations' not in df.columns:
+        print(f"Missing required columns for regenerations by structure chart")
         return
 
     # Define brick count bins
     bins = [(0, 50), (51, 100), (101, 150), (151, 200), (201, float('inf'))]
     bin_labels = ['0-50', '51-100', '101-150', '151-200', '201+']
 
-    # Calculate total rejections for each bin
-    total_rejections = []
+    # Calculate mean regenerations and counts for each bin
+    mean_regenerations = []
+    bin_counts = []
     for (min_bricks, max_bricks), label in zip(bins, bin_labels):
         # Filter data for this brick bin
         if max_bricks == float('inf'):
@@ -60,26 +65,46 @@ def plot_total_rejections_by_structure(df, suffix, output_dir):
         else:
             bin_df = df[(df['n_bricks'] >= min_bricks) & (df['n_bricks'] <= max_bricks)]
 
-        # Sum total rejections in this bin
-        total_rej = bin_df['total_rejections'].sum() if len(bin_df) > 0 else 0
-        total_rejections.append(total_rej)
+        # Store count of structures in this bin
+        bin_counts.append(len(bin_df))
 
-    # Create bar chart
-    plt.figure(figsize=(10, 6))
-    plt.bar(bin_labels, total_rejections, alpha=0.7, edgecolor='black')
+        # Calculate mean regenerations in this bin
+        if len(bin_df) > 0:
+            mean_regen = bin_df['n_regenerations'].mean()
+        else:
+            mean_regen = 0
+        mean_regenerations.append(mean_regen)
 
-    plt.title(f'Total Rejections by Structure Length ({suffix.replace("_", " ").title()})', fontsize=14)
-    plt.xlabel('Structure Length (Number of Bricks)', fontsize=12)
-    plt.ylabel('Total Number of Rejections', fontsize=12)
-    plt.ylim(bottom=0)
-    plt.gca().yaxis.set_major_locator(plt.MaxNLocator(integer=True))
-    plt.grid(True, linestyle='--', alpha=0.3, axis='y')
+    # Create bar chart with improved styling
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    # Use a color gradient for better visual appeal
+    colors = plt.cm.viridis(np.linspace(0.2, 0.8, len(bin_labels)))
+    bars = ax.bar(bin_labels, mean_regenerations, color=colors, alpha=0.8, 
+                  edgecolor='black', linewidth=1.5, width=0.7)
+
+    # Add count labels on top of each bar
+    for bar, count in zip(bars, bin_counts):
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width() / 2., height,
+                f'n={count}',
+                ha='center', va='bottom', fontsize=10, fontweight='bold')
+
+    ax.set_title(f'Mean Regenerations by Structure Length ({suffix.replace("_", " ").title()})', 
+                fontsize=14, fontweight='bold', pad=15)
+    ax.set_xlabel('Structure Length (Number of Bricks)', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Mean Number of Regenerations', fontsize=12, fontweight='bold')
+    ax.set_ylim(bottom=0)
+    ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.grid(True, linestyle='--', alpha=0.3, axis='y', zorder=0)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
     plt.tight_layout()
 
-    output_path = os.path.join(output_dir, f'total_rejections_by_structure_{suffix}.png')
+    output_path = os.path.join(output_dir, f'mean_regenerations_by_structure_{suffix}.png')
     plt.savefig(output_path, bbox_inches='tight')
     plt.close()
-    print(f"Saved total rejections by structure chart to {output_path}")
+    print(f"Saved mean regenerations by structure chart to {output_path}")
 
 
 def plot_structure_regeneration_frequency(df, suffix, output_dir):
@@ -95,7 +120,7 @@ def plot_structure_regeneration_frequency(df, suffix, output_dir):
         print(f"Missing n_regenerations column for structure regeneration frequency histogram")
         return
 
-    plt.figure(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(10, 6))
 
     regenerations = df['n_regenerations']
     max_regen = int(regenerations.max())
@@ -107,16 +132,28 @@ def plot_structure_regeneration_frequency(df, suffix, output_dir):
     else:
         bins = 20
 
-    plt.hist(regenerations, bins=bins, alpha=0.7, edgecolor='black')
+    # Calculate histogram data
+    counts, bin_edges = np.histogram(regenerations, bins=bins)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+    
+    # Use a single non-blue color (teal/green)
+    bar_color = '#2E8B57'  # SeaGreen
+    
+    # Create histogram bars with single color
+    bars = ax.bar(bin_centers, counts, width=bin_edges[1] - bin_edges[0], 
+                  color=bar_color, alpha=0.7, edgecolor='black', linewidth=1.5)
 
-    plt.title(f'Structure Regeneration Frequency ({suffix.replace("_", " ").title()})', fontsize=14)
-    plt.xlabel('Number of Structure Regenerations', fontsize=12)
-    plt.ylabel('Frequency', fontsize=12)
-    plt.xlim(left=0)
-    plt.ylim(bottom=0)
-    plt.gca().xaxis.set_major_locator(plt.MaxNLocator(integer=True))
-    plt.gca().yaxis.set_major_locator(plt.MaxNLocator(integer=True))
-    plt.grid(True, linestyle='--', alpha=0.3)
+    ax.set_title(f'Structure Regeneration Frequency ({suffix.replace("_", " ").title()})', 
+                fontsize=14, fontweight='bold', pad=15)
+    ax.set_xlabel('Number of Structure Regenerations', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Frequency', fontsize=12, fontweight='bold')
+    ax.set_xlim(left=0)
+    ax.set_ylim(bottom=0)
+    ax.xaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.grid(True, linestyle='--', alpha=0.3, zorder=0)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
     plt.tight_layout()
 
     output_path = os.path.join(output_dir, f'structure_regeneration_frequency_{suffix}.png')
@@ -179,7 +216,7 @@ if __name__ == '__main__':
         description='Analyze evaluation statistics from JSON file',
         usage='python eval_stats.py <input_path> [--output_dir OUTPUT_DIR]'
     )
-    parser.add_argument('input_path', type=str, help='Path to JSON file containing evaluation results')
+    parser.add_argument('--input_path', type=str, help='Path to JSON file containing evaluation results')
     parser.add_argument('--output_dir', type=str, default=None,
                        help='Directory to save outputs (defaults to same directory as input file)')
     args = parser.parse_args()
