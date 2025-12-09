@@ -6,7 +6,7 @@ import transformers
 from tqdm import tqdm
 import argparse
 from datetime import datetime
-
+import ast
 from brickgpt.models import BrickGPT, BrickGPTConfig
 
 
@@ -108,9 +108,6 @@ def main():
     pbar = tqdm(total=total_prompts, desc="Processing prompts")
 
     for idx, row in df.iterrows():
-        structure_id = str(row.get('structure_id', idx))
-        object_id = str(row.get('object_id', idx))
-        category_id = str(row.get('category_id', idx))
         prompts = row[args.caption_column]
 
         prompts_list = ast.literal_eval(prompts) if isinstance(prompts, str) else prompts
@@ -130,11 +127,7 @@ def main():
 
             result = {
                 'model_name_or_path': cfg.model_name_or_path,
-                'structure_id': structure_id,
-                'object_id': object_id,
-                'category_id': category_id,
                 'prompt': str(prompt),
-                'prompt_idx': prompt_idx,
                 'caption_type': caption_type,
                 'final_sequence': final_bricks.to_txt(),
                 'n_bricks': len(final_bricks),
