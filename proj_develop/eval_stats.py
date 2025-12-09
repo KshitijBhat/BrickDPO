@@ -21,38 +21,38 @@ def print_stats_for_subset(df, subset_name="All"):
     print(f"Number of samples: {len(df)}")
 
     # ========== Regeneration Stats ==========
-    print("\n========== Regeneration Stats ==========")
+    print("\n========== Structure Regeneration Stats ==========")
     if 'n_regenerations' in df.columns:
-        print(f"Mean regenerations: {df['n_regenerations'].mean():.2f}")
+        print(f"Mean structure regenerations: {df['n_regenerations'].mean():.2f}")
 
     # ========== Stability Stats ==========
     print("\n========== Stability Stats ==========")
     if 'mean_stability_score' in df.columns:
         print(f"Mean stability score: {df['mean_stability_score'].mean():.6f}")
 
-    if 'min_stability_score' in df.columns:
-        print(f"Mean of minimum stability scores: {df['min_stability_score'].mean():.6f}")
+    if 'max_stability_score' in df.columns:
+        print(f"Mean of maximum stability scores: {df['max_stability_score'].mean():.6f}")
 
 
-def plot_regenerations_by_brick_bins(df, suffix, output_dir):
+def plot_total_rejections_by_structure(df, suffix, output_dir):
     """
-    Plot bar chart of total regenerations for different brick count bins.
+    Plot bar chart of total rejections by structure length bins.
 
     Args:
         df: DataFrame containing the evaluation results
         suffix: Suffix for the output filename (e.g., 'mixed_dataset', 'short_dataset', 'long_dataset')
         output_dir: Directory to save the plot
     """
-    if 'n_bricks' not in df.columns or 'n_regenerations' not in df.columns:
-        print(f"Missing required columns for brick bin histogram")
+    if 'n_bricks' not in df.columns or 'total_rejections' not in df.columns:
+        print(f"Missing required columns for total rejections by structure chart")
         return
 
     # Define brick count bins
     bins = [(0, 50), (51, 100), (101, 150), (151, 200), (201, float('inf'))]
     bin_labels = ['0-50', '51-100', '101-150', '151-200', '201+']
 
-    # Calculate total regenerations for each bin
-    total_regenerations = []
+    # Calculate total rejections for each bin
+    total_rejections = []
     for (min_bricks, max_bricks), label in zip(bins, bin_labels):
         # Filter data for this brick bin
         if max_bricks == float('inf'):
@@ -60,70 +60,69 @@ def plot_regenerations_by_brick_bins(df, suffix, output_dir):
         else:
             bin_df = df[(df['n_bricks'] >= min_bricks) & (df['n_bricks'] <= max_bricks)]
 
-        # Sum total regenerations in this bin
-        total_regen = bin_df['n_regenerations'].sum() if len(bin_df) > 0 else 0
-        total_regenerations.append(total_regen)
+        # Sum total rejections in this bin
+        total_rej = bin_df['total_rejections'].sum() if len(bin_df) > 0 else 0
+        total_rejections.append(total_rej)
 
     # Create bar chart
     plt.figure(figsize=(10, 6))
-    bars = plt.bar(bin_labels, total_regenerations, alpha=0.7, edgecolor='black')
+    plt.bar(bin_labels, total_rejections, alpha=0.7, edgecolor='black')
 
-    # Add value labels on top of bars
-    for bar in bars:
-        height = bar.get_height()
-        plt.text(bar.get_x() + bar.get_width()/2., height,
-                f'{int(height)}',
-                ha='center', va='bottom', fontsize=10)
-
-    plt.title(f'Total Regenerations by Structure Length ({suffix.replace("_", " ").title()})', fontsize=14)
+    plt.title(f'Total Rejections by Structure Length ({suffix.replace("_", " ").title()})', fontsize=14)
     plt.xlabel('Structure Length (Number of Bricks)', fontsize=12)
-    plt.ylabel('Total Number of Regenerations', fontsize=12)
+    plt.ylabel('Total Number of Rejections', fontsize=12)
+    plt.ylim(bottom=0)
+    plt.gca().yaxis.set_major_locator(plt.MaxNLocator(integer=True))
     plt.grid(True, linestyle='--', alpha=0.3, axis='y')
     plt.tight_layout()
 
-    output_path = os.path.join(output_dir, f'regenerations_by_brick_bins_{suffix}.png')
+    output_path = os.path.join(output_dir, f'total_rejections_by_structure_{suffix}.png')
     plt.savefig(output_path, bbox_inches='tight')
     plt.close()
-    print(f"Saved regenerations by brick bins chart to {output_path}")
+    print(f"Saved total rejections by structure chart to {output_path}")
 
 
-def plot_rejection_frequency(df, suffix, output_dir):
+def plot_structure_regeneration_frequency(df, suffix, output_dir):
     """
-    Plot histogram of rejection frequency.
+    Plot histogram of structure regeneration frequency.
 
     Args:
         df: DataFrame containing the evaluation results
         suffix: Suffix for the output filename (e.g., 'mixed_dataset', 'short_dataset', 'long_dataset')
         output_dir: Directory to save the plot
     """
-    if 'total_rejections' not in df.columns:
-        print(f"Missing total_rejections column for rejection frequency histogram")
+    if 'n_regenerations' not in df.columns:
+        print(f"Missing n_regenerations column for structure regeneration frequency histogram")
         return
 
     plt.figure(figsize=(10, 6))
 
-    rejections = df['total_rejections']
-    max_rej = int(rejections.max())
-    min_rej = int(rejections.min())
+    regenerations = df['n_regenerations']
+    max_regen = int(regenerations.max())
+    min_regen = int(regenerations.min())
 
-    # Create histogram
-    if max_rej > min_rej:
-        bins = range(min_rej, max_rej + 2)
+    # Create histogram with bins from 0 to max
+    if max_regen > 0:
+        bins = range(0, max_regen + 2)
     else:
         bins = 20
 
-    plt.hist(rejections, bins=bins, alpha=0.7, edgecolor='black')
+    plt.hist(regenerations, bins=bins, alpha=0.7, edgecolor='black')
 
-    plt.title(f'Rejection Frequency ({suffix.replace("_", " ").title()})', fontsize=14)
-    plt.xlabel('Number of Rejections', fontsize=12)
+    plt.title(f'Structure Regeneration Frequency ({suffix.replace("_", " ").title()})', fontsize=14)
+    plt.xlabel('Number of Structure Regenerations', fontsize=12)
     plt.ylabel('Frequency', fontsize=12)
+    plt.xlim(left=0)
+    plt.ylim(bottom=0)
+    plt.gca().xaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    plt.gca().yaxis.set_major_locator(plt.MaxNLocator(integer=True))
     plt.grid(True, linestyle='--', alpha=0.3)
     plt.tight_layout()
 
-    output_path = os.path.join(output_dir, f'rejection_frequency_{suffix}.png')
+    output_path = os.path.join(output_dir, f'structure_regeneration_frequency_{suffix}.png')
     plt.savefig(output_path, bbox_inches='tight')
     plt.close()
-    print(f"Saved rejection frequency histogram to {output_path}")
+    print(f"Saved structure regeneration frequency histogram to {output_path}")
 
 
 def analyze_stats(input_path, output_dir=None):
@@ -150,26 +149,26 @@ def analyze_stats(input_path, output_dir=None):
     if has_caption_types:
         # Analyze overall statistics (mixed dataset)
         print_stats_for_subset(df, "Mixed Dataset (All)")
-        plot_regenerations_by_brick_bins(df, "mixed_dataset", output_dir)
-        plot_rejection_frequency(df, "mixed_dataset", output_dir)
+        plot_total_rejections_by_structure(df, "mixed_dataset", output_dir)
+        plot_structure_regeneration_frequency(df, "mixed_dataset", output_dir)
 
         # Analyze statistics per caption type
         if 'short' in df['caption_type'].values:
             df_short = df[df['caption_type'] == 'short']
             print_stats_for_subset(df_short, "Short Prompts")
-            plot_regenerations_by_brick_bins(df_short, "short_dataset", output_dir)
-            plot_rejection_frequency(df_short, "short_dataset", output_dir)
+            plot_total_rejections_by_structure(df_short, "short_dataset", output_dir)
+            plot_structure_regeneration_frequency(df_short, "short_dataset", output_dir)
 
         if 'long' in df['caption_type'].values:
             df_long = df[df['caption_type'] == 'long']
             print_stats_for_subset(df_long, "Long Prompts")
-            plot_regenerations_by_brick_bins(df_long, "long_dataset", output_dir)
-            plot_rejection_frequency(df_long, "long_dataset", output_dir)
+            plot_total_rejections_by_structure(df_long, "long_dataset", output_dir)
+            plot_structure_regeneration_frequency(df_long, "long_dataset", output_dir)
     else:
         # No caption types - treat all as mixed dataset
         print_stats_for_subset(df, "Mixed Dataset")
-        plot_regenerations_by_brick_bins(df, "mixed_dataset", output_dir)
-        plot_rejection_frequency(df, "mixed_dataset", output_dir)
+        plot_total_rejections_by_structure(df, "mixed_dataset", output_dir)
+        plot_structure_regeneration_frequency(df, "mixed_dataset", output_dir)
 
     print('\n========== Done ==========\n')
 
